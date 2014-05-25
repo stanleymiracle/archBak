@@ -149,3 +149,4 @@ vi /etc/bash.bashrc
     # complete -cf sudo
     # complete -cf man
 
+# configure the gedit preference
