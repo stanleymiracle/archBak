@@ -1,0 +1,151 @@
+##################### 
+# file system setup #
+#####################
+cfdisk /dev/sdX
+	# 256MB boot
+	# 10240MB /
+	# the rest /home
+mkfs.ext2 /dev/sdX1
+mkfs.ext4 /dev/sdX2
+mkfs.ext4 /dev/sdX3
+mount /dev/sdX2 /mnt
+mkdir /mnt/boot && mount /dev/sdX1 /mnt/boot
+mkdir /mnt/home && mount /dev/sdX3 /mnt/home
+
+#######################
+# connect to internet #
+#######################
+wifi-menu
+
+####################### 
+# install base system #
+#######################
+pacstrap /mnt base base-devel
+
+######################## 
+# system configuration #
+########################
+genfstab -p /mnt >> /mnt/etc/fstab
+nano /mnt/etc/fstab
+	# /dev/sda1	 /boot	ext2	defaults,relatime,stripe=4	0 2
+	# /dev/sda2	 /	    ext4	defaults,noatime,distcard	0 1
+	# /dev/sda3	 /home	ext4	defaults,noatime,distcard,data=ordered	0 2
+
+arch-chroot /mnt
+
+ln -s /usr/share/zoneinfo/US/Pacific /etc/localtime
+hwclock --systohc --utc
+nano /etc/locale.gen
+	# uncomment #en_US.UTF-8 UTF8 #zh_CN.UTF-8 UTF8
+locale-gen
+echo LANG=en_US.UTF-8 > /etc/locale.conf
+export LANG=en_US.UTF-8
+
+passwd
+useradd -m -g users -G wheel,audio -s /bin/bash linuxfish
+passwd linuxfish
+
+nano /etc/sudoers
+	# add "username ALL=(ALL) ALL" under root ...
+
+nano /etc/mkinitcpio.conf
+	# add 'block' after HOOKS='... udev 
+mkinitcpio -p linux
+
+########################### 
+# bootloader installation #
+###########################
+pacman -Syyu
+pacman -S dialog wpa_supplicant wpa_actiond ifplugd
+pacman -S syslinux
+syslinux-install_update -i -a -m
+	# for BIOS installation
+blkid
+nano /boot/syslinux/syslinux.cfg
+	# root=.../sdaX
+	# uuid assignment
+
+exit
+umount -R /mnt
+reboot
+
+############################### 
+# graphic system installation #
+###############################
+pacman -S xorg-server xorg-xinit xorg-server-utils xf86-input-synaptics xterm
+pacman -S mesa xf86-video-ati xf86-video-intel xf86-video-vesa xf86-video-nouveau xf86-video-nv
+
+pacman -S alsa-utils
+
+pacman -S ttf-dejavu ttf-droid git
+
+git clone # themes from github
+
+pacman -S awesome
+mkdir -p ~/.config/awesome/
+cp ~/downloadedThemes/rc.lua ~/.config/awesome
+nano ~/.config/awesome/rc.lua
+cp /etc/skel/.xinitrc ~/.xinitrc
+vim ~/.xinitrc
+	# add 'exec awesome' to the end
+
+xinit #open xwindow
+
+
+#################################### 
+# graphic application installation #
+####################################
+pacman -S firefox flashplugin evince feh eclipse transmission-qt mplayer
+pacman -S tmux blender gedit
+
+############################ 
+# preference configuration #
+############################
+systemctl enable netctl-auto@interface.service
+
+nano /etc/vimrc
+	# set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+	# set nu
+
+vi /usr/share/X11/keycodes/evdev
+	# change keycodes
+
+vi /usr/share/kbd/keymaps/i386/qwerty/defkeymap.map.gz
+	# change keymap
+
+vi /etc/vconsole.conf
+    # KEYMAP=defkeymap
+
+vi .Xresources
+    # add:
+    # ! terminal colors -----------------------
+    # *background: #111111
+    # *foreground: #babdb6
+
+vi /etc/systemd/logind.conf
+	# HandleLidSwitch=ignore
+
+vi /etc/bash.bashrc
+	# alias la='ls -a'
+	# alias lal='ls -al'
+	# alias vi='vim'
+	# alias suvi='sudo vim'
+	# alias audio='sudo alsamixer'
+	# alias wifim='sudo wifimenu'
+	# alias poff='sudo poweroff'
+	# alias rst='sudo reboot'
+    # alias pacupg='sudo pacman -Syu'	# Synchronize with repositories and then upgrade packages that are out of date on the local system.
+	# alias pacin='sudo pacman -S'		# Install specific package(s) from the repositories
+	# alias pacins='sudo pacman -U'		# Install specific package not from the repositories but from a file 
+	# alias pacre='sudo pacman -R'		# Remove the specified package(s), retaining its configuration(s) and required dependencies
+	# alias pacrem='sudo pacman -Rns'	# Remove the specified package(s), its configuration(s) and unneeded dependencies
+	# alias pacrep='pacman -Si'		    # Display information about a given package in the repositories
+	# alias pacreps='pacman -Ss'		# Search for package(s) in the repositories
+	# alias pacloc='pacman -Qi'		    # Display information about a given package in the local database
+	# alias paclocs='pacman -Qs'		# Search for package(s) in the local database
+	# alias paclo="pacman -Qdt"		    # List all packages which are orphaned
+	# alias pacc="sudo pacman -Scc"		# Clean cache - delete all not currently installed package files
+	# alias paclf="pacman -Ql"		    # List all files installed by a given package
+    # complete -cf sudo
+    # complete -cf man
+
