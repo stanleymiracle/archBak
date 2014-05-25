@@ -1,1 +1,5 @@
-/usr/share/X11/xkb/keycodes/
+# for evdev
+  /usr/share/X11/xkb/keycodes/
+
+# for vconsole.conf
+  /etc/
