@@ -142,6 +142,11 @@ batterywidgettimer:connect_signal("timeout",
 )    
 batterywidgettimer:start()
 
+-- Create a volume widget
+volume = wibox.widget.textbox()
+vicious.register(volume, vicious.widgets.volume,
+'<span> |♩$1</span>', 0.3, "Master")
+
 -- Create a wibox for each screen and add it
 mywibox = {}
 mypromptbox = {}
@@ -222,6 +227,7 @@ for s = 1, screen.count() do
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(netwidget)
+    right_layout:add(volume)
     right_layout:add(batterywidget)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
@@ -255,8 +261,7 @@ globalkeys = awful.util.table.join(
 	awful.key({ "Control", "Shift"}, "p", function() awful.util.spawn("firefox -incognito") end),
 
 	-- {{ Opens chromium }} --
-	awful.key({ modkey,           }, "c", function() awful.util.spawn("chromium") end),
-	awful.key({ "Control", "Shift"}, "n", function() awful.util.spawn("chromium -incognito") end),
+	awful.key({ modkey,           }, "c", function() awful.util.spawn("chromium -incognito") end),
 
 	-- {{ Spawns Skype }} --
 	awful.key({ "Control", "Shift"}, "s", function() awful.util.spawn("skype") end),
