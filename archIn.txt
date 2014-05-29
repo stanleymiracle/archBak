@@ -52,9 +52,9 @@ nano /etc/mkinitcpio.conf
 	# add 'block' after HOOKS='... udev 
 mkinitcpio -p linux
 
-########################### 
-# bootloader installation #
-###########################
+####################################### 
+# wifi-menu & bootloader installation #
+#######################################
 pacman -Syyu
 pacman -S dialog wpa_supplicant wpa_actiond ifplugd iw
 pacman -S syslinux
