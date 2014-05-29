@@ -56,7 +56,7 @@ mkinitcpio -p linux
 # bootloader installation #
 ###########################
 pacman -Syyu
-pacman -S dialog wpa_supplicant wpa_actiond ifplugd
+pacman -S dialog wpa_supplicant wpa_actiond ifplugd iw
 pacman -S syslinux
 syslinux-install_update -i -a -m
 	# for BIOS installation
