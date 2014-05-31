@@ -264,7 +264,7 @@ globalkeys = awful.util.table.join(
 	awful.key({ modkey,           }, "c", function() awful.util.spawn("chromium -incognito") end),
 
 	-- {{ Spawns Skype }} --
-	awful.key({ "Control", "Shift"}, "s", function() awful.util.spawn("skype") end),
+	awful.key({ modkey,           }, "s", function() awful.util.spawn("skype") end),
 
 	-- {{ Spawns gedit }} --
 	awful.key({ modkey,           }, "g", function() awful.util.spawn("gedit") end),
