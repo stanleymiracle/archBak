@@ -18,7 +18,7 @@ alias suvi='sudo vim'
 alias audio='sudo alsamixer'
 alias wifi='sudo wifi-menu'
 alias wifis='iw dev wlp1s0 link'
-alias poff='sudo poweroff'
+alias off='sudo poweroff'
 alias rst='sudo reboot'
 
 # pacman tips
