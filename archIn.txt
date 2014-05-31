@@ -96,7 +96,7 @@ xinit #open xwindow
 # graphic application installation #
 ####################################
 pacman -S firefox flashplugin evince feh eclipse transmission-qt mplayer
-pacman -S tmux blender gedit
+pacman -S tmux gedit gnumeric qcad
 
 ############################ 
 # preference configuration #
@@ -117,10 +117,6 @@ vi /etc/vconsole.conf
     # KEYMAP=defkeymap
 
 vi .Xresources
-    # add:
-    # ! terminal colors -----------------------
-    # *background: #111111
-    # *foreground: #babdb6
 
 vi /etc/systemd/logind.conf
 	# HandleLidSwitch=ignore
