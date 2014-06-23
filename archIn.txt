@@ -81,7 +81,7 @@ pacman -S ttf-dejavu ttf-droid git
 
 git clone # themes from github
 
-pacman -S awesome
+pacman -S awesome vicious
 mkdir -p ~/.config/awesome/
 cp ~/downloadedThemes/rc.lua ~/.config/awesome
 nano ~/.config/awesome/rc.lua
