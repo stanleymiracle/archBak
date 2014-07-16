@@ -28,7 +28,7 @@ pacstrap /mnt base base-devel
 genfstab -p /mnt >> /mnt/etc/fstab
 nano /mnt/etc/fstab
 	# /dev/sda1	 /boot	ext2	defaults,relatime,stripe=4	0 2
-	# /dev/sda2	 /	    ext4	defaults,noatime,distcard	0 1
+	# /dev/sda2	 /	ext4	defaults,noatime,distcard	0 1
 	# /dev/sda3	 /home	ext4	defaults,noatime,distcard,data=ordered	0 2
 
 arch-chroot /mnt
@@ -114,7 +114,7 @@ vi /usr/share/kbd/keymaps/i386/qwerty/defkeymap.map.gz
 	# change keymap
 
 vi /etc/vconsole.conf
-    # KEYMAP=defkeymap
+	# KEYMAP=defkeymap
 
 vi .Xresources
 
@@ -130,7 +130,7 @@ vi /etc/bash.bashrc
 	# alias wifim='sudo wifimenu'
 	# alias poff='sudo poweroff'
 	# alias rst='sudo reboot'
-    # alias pacupg='sudo pacman -Syyu'	# Synchronize with repositories and then upgrade packages for local
+	# alias pacupg='sudo pacman -Syyu'	# Synchronize with repositories and then upgrade packages for local
 	# alias pacin='sudo pacman -S'		# Install specific package(s) from the repositories
 	# alias pacins='sudo pacman -U'		# Install specific package not from the repositories but from a file 
 	# alias pacre='sudo pacman -R'		# Remove the specified package(s), retaining its configuration(s) and required dependencies
@@ -142,7 +142,7 @@ vi /etc/bash.bashrc
 	# alias paclo="pacman -Qdt"		    # List all packages which are orphaned
 	# alias pacc="sudo pacman -Scc"		# Clean cache - delete all not currently installed package files
 	# alias paclf="pacman -Ql"		    # List all files installed by a given package
-    # complete -cf sudo
-    # complete -cf man
+	# complete -cf sudo
+	# complete -cf man
 
 # configure the gedit preference
