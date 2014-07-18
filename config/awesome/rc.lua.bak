@@ -43,7 +43,7 @@ beautiful.init(awful.util.getdir("config") .. "/themes/zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "xterm"
-editor = os.getenv("EDITOR") or "gedit"
+editor = os.getenv("EDITOR") or "Sublime_text"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -107,19 +107,6 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- Create a textclock widget
 mytextclock = awful.widget.textclock()
 
--- Create a network widget
-netwidget = wibox.widget.textbox()
-vicious.register(netwidget, vicious.widgets.net, function(widget, args)
-    local interface = ""
-    if args["{wlp1s0 carrier}"] == 1 then
-        interface = "wlp1s0"
-    elseif args["{enp2s0 carrier}"] == 1 then
-        interface = "enp2s0"
-    else
-        return ""
-    end
-    return '<span>'..args["{"..interface.." down_kb}"]..'kbps'..'</span>' end, 10)
-
 -- Create a battery widget
 batterywidget = wibox.widget.textbox()    
 batterywidget:set_text(" | Battery | ")    
@@ -137,6 +124,19 @@ batterywidgettimer:start()
 volume = wibox.widget.textbox()
 vicious.register(volume, vicious.widgets.volume,
 '<span> |♩$1</span>', 0.3, "Master")
+
+-- Create a network widget
+netwidget = wibox.widget.textbox()
+vicious.register(netwidget, vicious.widgets.net, function(widget, args)
+    local interface = ""
+    if args["{wlp1s0 carrier}"] == 1 then
+        interface = "wlp1s0"
+    elseif args["{enp2s0 carrier}"] == 1 then
+        interface = "enp2s0"
+    else
+        return ""
+    end
+    return '<span>'..args["{"..interface.." down_kb}"]..'kbps'..'</span>' end, 1)
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -257,8 +257,8 @@ globalkeys = awful.util.table.join(
 	-- {{ Spawns Skype }} --
 	awful.key({ modkey,           }, "s", function() awful.util.spawn("skype") end),
 
-	-- {{ Spawns gedit }} --
-	awful.key({ modkey,           }, "g", function() awful.util.spawn("gedit") end),
+	-- {{ Spawns Sublime_text }} --
+	awful.key({ modkey,           }, "g", function() awful.util.spawn("Sublime_text") end),
 
 	-- {{ Volume Control }} --
 	awful.key({     }, "XF86AudioRaiseVolume", function() awful.util.spawn("amixer set Master 5%+", false) end),
@@ -426,7 +426,7 @@ awful.rules.rules = {
                      buttons = clientbuttons } },
     -- Set Xterm as floating with a fixed position
  	{ rule = { class = "XTerm" }, 
- 	  properties = { floating = false }, callback = function(c) c:geometry({x=0, y=20}) end},
+ 	  properties = { floating = false }, callback = function(c) c:geometry({x=0, y=19}) end},
  	-- Set MPlayer as floating
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
@@ -440,8 +440,8 @@ awful.rules.rules = {
     -- Set Chromium to tags number 2 of screen 1 and switch to the tag.
     { rule = { class = "Chromium" },
       properties = { tag = tags[1][2], switchtotag = true } },
-    -- Set Gedit to tags number 3 of screen 1 and switch to the tag.
-    { rule = { class = "Gedit" },
+    -- Set Sublime_text to tags number 3 of screen 1 and switch to the tag.
+    { rule = { class = "Sublime_text" },
       properties = { tag = tags[1][3], switchtotag = true } },
 }
 -- }}}
