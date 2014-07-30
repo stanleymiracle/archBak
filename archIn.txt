@@ -73,7 +73,6 @@ reboot
 # graphic system installation #
 ###############################
 pacman -S xorg-server xorg-xinit xorg-server-utils xf86-input-synaptics xterm
-pacman -S mesa xf86-video-ati xf86-video-intel xf86-video-vesa xf86-video-nouveau xf86-video-nv
 
 pacman -S alsa-utils
 

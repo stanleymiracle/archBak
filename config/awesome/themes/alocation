@@ -1,4 +1,0 @@
-# location of default themes
-
-cp /usr/share/awesome/themes/default ~/.config/awesome/themes/default
-cp /usr/share/awesome/themes/zenburn ~/.config/awesome/themes/zenburn

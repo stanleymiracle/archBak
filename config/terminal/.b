@@ -1,8 +1,8 @@
 ! xterm ----------------------------------------------------------------------
 
-xterm*VT100.geometry:     80x25
-xterm*faceName:          style=Regular:size=8
-!xterm*font:              -*-dina-medium-r-*-*-15-*-*-*-*-*-*-*
+xterm*VT100.geometry:     90x25
+!xterm*faceName:           Terminus:style=Regular:size=8
+xterm*font:              -*-dina-medium-r-*-*-15-*-*-*-*-*-*-*
 xterm*dynamicColors:      true
 xterm*utf8:               2
 xterm*eightBitInput:      true
