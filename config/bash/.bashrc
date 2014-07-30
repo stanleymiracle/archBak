@@ -37,4 +37,3 @@ alias paclf='pacman -Ql'
 
 complete -cf sudo
 complete -cf man
-complete -cf git
