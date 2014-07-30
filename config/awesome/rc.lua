@@ -119,6 +119,33 @@ batterywidgettimer:connect_signal("timeout",
   end    
 )    
 batterywidgettimer:start()
+-- Create battery notification
+battery_timer = timer({timeout = 2})
+battery_timer:connect_signal("timeout", function()  batteryNotice("BAT1") end)
+battery_timer:start()
+function batteryNotice(adapter)
+    local fcur = io.open("/sys/class/power_supply/"..adapter.."/charge_now")
+    local fcap = io.open("/sys/class/power_supply/"..adapter.."/charge_full")
+    local fsta = io.open("/sys/class/power_supply/"..adapter.."/status")
+    if fcur and fcap and fsta then
+        local cur = fcur:read()
+        local cap = fcap:read()
+        local sta = fsta:read()
+        local battery = math.floor(cur * 100 / cap)
+        if sta:match("Discharging") and tonumber(battery) <= 10 then
+               naughty.notify({ preset = naughty.config.presets.critical,
+                                title = "Batterie Low!",
+                                text = " ".. battery .. "% left!",
+                                fg="#ff0000",
+                                bg="#deb887",
+                                timeout = 1, })
+      end
+    else
+    end
+    fcur:close()
+    fcap:close()
+    fsta:close()
+end
 
 -- Create a volume widget
 volume = wibox.widget.textbox()
