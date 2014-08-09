@@ -161,7 +161,7 @@ vicious.register(netwidget, vicious.widgets.net, function(widget, args)
     elseif args["{enp2s0 carrier}"] == 1 then
         interface = "enp2s0"
     else
-        return ""
+        return "timeout"
     end
     return '<span>'..args["{"..interface.." down_kb}"]..'kbps'..'</span>' end, 1)
 
@@ -279,13 +279,13 @@ globalkeys = awful.util.table.join(
 	awful.key({ "Control", "Shift"}, "p", function() awful.util.spawn("firefox -incognito") end),
 
 	-- {{ Opens chromium }} --
-	awful.key({ modkey,           }, "c", function() awful.util.spawn("chromium -incognito") end),
+	awful.key({ modkey,           }, "c", function() awful.util.spawn("google-chrome-stable -incognito") end),
 
 	-- {{ Spawns Skype }} --
-	awful.key({ modkey,           }, "s", function() awful.util.spawn("skype") end),
+	--awful.key({ modkey,           }, "s", function() awful.util.spawn("skype") end),
 
 	-- {{ Spawns Sublime_text }} --
-	awful.key({ modkey,           }, "g", function() awful.util.spawn("Sublime_text") end),
+	awful.key({ modkey,           }, "s", function() awful.util.spawn("sublime_text") end),
 
 	-- {{ Volume Control }} --
 	awful.key({     }, "XF86AudioRaiseVolume", function() awful.util.spawn("amixer set Master 5%+", false) end),
@@ -465,7 +465,7 @@ awful.rules.rules = {
     { rule = { class = "Firefox" },
       properties = { tag = tags[1][2], switchtotag = true } },
     -- Set Chromium to tags number 2 of screen 1 and switch to the tag.
-    { rule = { class = "Chromium" },
+    { rule = { class = "Google-chrome-stable" },
       properties = { tag = tags[1][2], switchtotag = true } },
     -- Set Sublime_text to tags number 3 of screen 1 and switch to the tag.
     { rule = { class = "Sublime_text" },
