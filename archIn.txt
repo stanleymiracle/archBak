@@ -95,7 +95,7 @@ xinit #open xwindow
 # graphic application installation #
 ####################################
 pacman -S firefox flashplugin evince feh eclipse transmission-qt mplayer
-pacman -S tmux gedit gnumeric qcad
+pacman -S tmux gedit gnumeric qcad dosfstools
 
 ############################ 
 # preference configuration #
@@ -144,4 +144,3 @@ vi /etc/bash.bashrc
 	# complete -cf sudo
 	# complete -cf man
 
-# configure the gedit preference
