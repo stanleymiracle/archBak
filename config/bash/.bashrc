@@ -10,7 +10,7 @@ PS1='[\u@\h \W]\$ '
 
 # modify command
 alias la='ls -a'
-alias lal='ls -al'
+alias ll='ls -al'
 alias vi='vim'
 alias suvi='sudo vim'
 alias audio='sudo alsamixer'

@@ -282,7 +282,7 @@ globalkeys = awful.util.table.join(
 	awful.key({ modkey,           }, "c", function() awful.util.spawn("google-chrome-stable -incognito") end),
 
 	-- {{ Spawns Skype }} --
-	--awful.key({ modkey,           }, "s", function() awful.util.spawn("skype") end),
+	awful.key({ modkey,           }, "e", function() awful.util.spawn("thunar") end),
 
 	-- {{ Spawns Sublime_text }} --
 	awful.key({ modkey,           }, "s", function() awful.util.spawn("sublime_text") end),
@@ -454,13 +454,19 @@ awful.rules.rules = {
     -- Set Xterm as floating with a fixed position
  	{ rule = { class = "XTerm" }, 
  	  properties = { floating = false }, callback = function(c) c:geometry({x=0, y=19}) end},
- 	-- Set MPlayer as floating
+ 	  -- Set MPlayer as floating
     { rule = { class = "MPlayer" },
+      properties = { floating = true } },
+    -- Set Thunar as floating
+    { rule = { class = "Thunar" },
       properties = { floating = true } },
     { rule = { class = "pinentry" },
       properties = { floating = true } },
     { rule = { class = "gimp" },
       properties = { floating = true } },
+    -- Set Thunar to tags number 1 of screen 1 and switch to the tag.
+    { rule = { class = "Thunar" },
+      properties = { tag = tags[1][1], switchtotag = true } },
     -- Set Firefox to tags number 2 of screen 1 and switch to the tag.
     { rule = { class = "Firefox" },
       properties = { tag = tags[1][2], switchtotag = true } },
