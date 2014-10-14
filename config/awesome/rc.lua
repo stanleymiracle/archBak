@@ -460,12 +460,18 @@ awful.rules.rules = {
     -- Set Thunar as floating
     { rule = { class = "Thunar" },
       properties = { floating = true } },
+    -- Set Transmission-qt as floating
+    { rule = { class = "Transmission-qt" },
+      properties = { floating = true } },
     { rule = { class = "pinentry" },
       properties = { floating = true } },
     { rule = { class = "gimp" },
       properties = { floating = true } },
     -- Set Thunar to tags number 1 of screen 1 and switch to the tag.
     { rule = { class = "Thunar" },
+      properties = { tag = tags[1][1], switchtotag = true } },
+    -- Set Transmission-qt to tags number 1 of screen 1 and switch to the tag.
+    { rule = { class = "Transmission-qt" },
       properties = { tag = tags[1][1], switchtotag = true } },
     -- Set Firefox to tags number 2 of screen 1 and switch to the tag.
     { rule = { class = "Firefox" },
