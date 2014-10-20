@@ -452,16 +452,13 @@ awful.rules.rules = {
                      keys = clientkeys,
                      buttons = clientbuttons } },
     -- Set Xterm as floating with a fixed position
- 	{ rule = { class = "XTerm" }, 
+ 	  { rule = { class = "XTerm" }, 
  	  properties = { floating = false }, callback = function(c) c:geometry({x=0, y=19}) end},
  	  -- Set MPlayer as floating
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
     -- Set Thunar as floating
     { rule = { class = "Thunar" },
-      properties = { floating = true } },
-    -- Set Android-studio as floating
-    { rule = { class = "Android-studio" },
       properties = { floating = true } },
     { rule = { class = "pinentry" },
       properties = { floating = true } },
@@ -478,9 +475,6 @@ awful.rules.rules = {
       properties = { tag = tags[1][2], switchtotag = true } },
     -- Set Sublime_text to tags number 3 of screen 1 and switch to the tag.
     { rule = { class = "Sublime_text" },
-      properties = { tag = tags[1][3], switchtotag = true } },
-      -- Set Android-studio to tags number 1 of screen 1 and switch to the tag.
-    { rule = { class = "Android-studio" },
       properties = { tag = tags[1][3], switchtotag = true } },
 }
 -- }}}
