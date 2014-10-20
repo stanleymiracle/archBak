@@ -460,8 +460,8 @@ awful.rules.rules = {
     -- Set Thunar as floating
     { rule = { class = "Thunar" },
       properties = { floating = true } },
-    -- Set Transmission-qt as floating
-    { rule = { class = "Transmission-qt" },
+    -- Set Android-studio as floating
+    { rule = { class = "Android-studio" },
       properties = { floating = true } },
     { rule = { class = "pinentry" },
       properties = { floating = true } },
@@ -469,9 +469,6 @@ awful.rules.rules = {
       properties = { floating = true } },
     -- Set Thunar to tags number 1 of screen 1 and switch to the tag.
     { rule = { class = "Thunar" },
-      properties = { tag = tags[1][1], switchtotag = true } },
-    -- Set Transmission-qt to tags number 1 of screen 1 and switch to the tag.
-    { rule = { class = "Transmission-qt" },
       properties = { tag = tags[1][1], switchtotag = true } },
     -- Set Firefox to tags number 2 of screen 1 and switch to the tag.
     { rule = { class = "Firefox" },
@@ -481,6 +478,9 @@ awful.rules.rules = {
       properties = { tag = tags[1][2], switchtotag = true } },
     -- Set Sublime_text to tags number 3 of screen 1 and switch to the tag.
     { rule = { class = "Sublime_text" },
+      properties = { tag = tags[1][3], switchtotag = true } },
+      -- Set Android-studio to tags number 1 of screen 1 and switch to the tag.
+    { rule = { class = "Android-studio" },
       properties = { tag = tags[1][3], switchtotag = true } },
 }
 -- }}}
