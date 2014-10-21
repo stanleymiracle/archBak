@@ -11,9 +11,17 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
-[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+xrdb -merge ~/.Xresources 
 
+# turn off monitor blanking
+xset -dpms
+xset s off
+
+# export path for android studio
+export ANDROID_SWT=~/android-studio/sdk/tools/lib/x86_64/
+
+# exec gnome-session
 # exec startkde
 # exec startxfce4
-exec awesome
 # ...or the Window Manager of your choice
+exec awesome
