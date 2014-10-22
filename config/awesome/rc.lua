@@ -281,7 +281,7 @@ globalkeys = awful.util.table.join(
 	-- {{ Opens chromium }} --
 	awful.key({ modkey,           }, "c", function() awful.util.spawn("google-chrome-stable -incognito") end),
 
-	-- {{ Spawns Skype }} --
+	-- {{ Spawns thunar }} --
 	awful.key({ modkey,           }, "e", function() awful.util.spawn("thunar") end),
 
 	-- {{ Spawns Sublime_text }} --
@@ -327,13 +327,13 @@ globalkeys = awful.util.table.join(
         end),
     
     -- Float manipulation
-	awful.key({ modkey,           }, "Up",    function () awful.client.moveresize(  0, -20,   0,   0) end),
+	  awful.key({ modkey,  Alt      }, "Up",    function () awful.client.moveresize(  0, -20,   0,   0) end),
     awful.key({ modkey, "Shift"   }, "Up",    function () awful.client.moveresize(  0,   0,   0, -20) end),
-    awful.key({ modkey,			  }, "Down",  function () awful.client.moveresize(  0,  20,   0,   0) end),
+    awful.key({ modkey,	 Alt      }, "Down",  function () awful.client.moveresize(  0,  20,   0,   0) end),
     awful.key({ modkey, "Shift"   }, "Down",  function () awful.client.moveresize(  0,   0,   0,  20) end),
-    awful.key({ modkey, "Control" }, "Right", function () awful.client.moveresize( 20,   0,   0,   0) end),
+    awful.key({ modkey,  Alt      }, "Right", function () awful.client.moveresize( 20,   0,   0,   0) end),
     awful.key({ modkey, "Shift"   }, "Right", function () awful.client.moveresize(  0,   0,  20,   0) end),
-    awful.key({ modkey, "Control" }, "Left",  function () awful.client.moveresize(-20,   0,   0,   0) end),
+    awful.key({ modkey,  Alt      }, "Left",  function () awful.client.moveresize(-20,   0,   0,   0) end),
     awful.key({ modkey, "Shift"   }, "Left",  function () awful.client.moveresize(  0,   0, -20,   0) end),
 
     -- Standard program
