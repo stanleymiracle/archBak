@@ -278,14 +278,17 @@ globalkeys = awful.util.table.join(
 	awful.key({ modkey,           }, "v", function() awful.util.spawn("firefox") end),
 	awful.key({ "Control", "Shift"}, "p", function() awful.util.spawn("firefox -incognito") end),
 
-	-- {{ Opens chromium }} --
+	-- {{ Opens google-chrome-stable -incognito }} --
 	awful.key({ modkey,           }, "c", function() awful.util.spawn("google-chrome-stable -incognito") end),
 
 	-- {{ Spawns thunar }} --
 	awful.key({ modkey,           }, "e", function() awful.util.spawn("thunar") end),
 
-	-- {{ Spawns Sublime_text }} --
+	-- {{ Spawns sublime_text }} --
 	awful.key({ modkey,           }, "s", function() awful.util.spawn("sublime_text") end),
+
+  -- {{ Spawns texmacs }} --
+  awful.key({ modkey,           }, "t", function() awful.util.spawn("texmacs") end),
 
 	-- {{ Volume Control }} --
 	awful.key({     }, "XF86AudioRaiseVolume", function() awful.util.spawn("amixer set Master 5%+", false) end),
@@ -460,8 +463,9 @@ awful.rules.rules = {
     -- Set Thunar as floating
     { rule = { class = "Thunar" },
       properties = { floating = true } },
-    { rule = { class = "pinentry" },
-      properties = { floating = true } },
+    -- -- Set Texmacs as floating
+    -- { rule = { class = "Texmacs" },
+    --   properties = { floating = true } },
     { rule = { class = "gimp" },
       properties = { floating = true } },
     -- Set Thunar to tags number 1 of screen 1 and switch to the tag.
@@ -476,6 +480,9 @@ awful.rules.rules = {
     -- Set Sublime_text to tags number 3 of screen 1 and switch to the tag.
     { rule = { class = "Sublime_text" },
       properties = { tag = tags[1][3], switchtotag = true } },
+    -- Set Texmacs to tags number 3 of screen 1 and switch to the tag.
+    { rule = { class = "Texmacs" },
+      properties = { tag = tags[1][2], switchtotag = true } },
 }
 -- }}}
 
