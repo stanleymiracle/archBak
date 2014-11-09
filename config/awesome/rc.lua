@@ -456,7 +456,7 @@ awful.rules.rules = {
                      buttons = clientbuttons } },
     -- Set Xterm as floating with a fixed position
  	  { rule = { class = "XTerm" }, 
- 	  properties = { floating = false }, callback = function(c) c:geometry({x=0, y=19}) end},
+ 	  properties = { floating = true }, callback = function(c) c:geometry({x=0, y=19}) end},
  	  -- Set MPlayer as floating
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
