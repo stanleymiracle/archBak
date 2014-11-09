@@ -276,19 +276,21 @@ globalkeys = awful.util.table.join(
 
 	-- {{ Opens firefox }} --
 	awful.key({ modkey,           }, "v", function() awful.util.spawn("firefox") end),
-	awful.key({ "Control", "Shift"}, "p", function() awful.util.spawn("firefox -incognito") end),
 
 	-- {{ Opens google-chrome-stable -incognito }} --
 	awful.key({ modkey,           }, "c", function() awful.util.spawn("google-chrome-stable -incognito") end),
 
 	-- {{ Spawns thunar }} --
-	awful.key({ modkey,           }, "e", function() awful.util.spawn("thunar") end),
+	awful.key({ modkey,           }, "z", function() awful.util.spawn("thunar") end),
 
 	-- {{ Spawns sublime_text }} --
 	awful.key({ modkey,           }, "s", function() awful.util.spawn("sublime_text") end),
 
   -- {{ Spawns texmacs }} --
   awful.key({ modkey,           }, "t", function() awful.util.spawn("texmacs") end),
+
+  -- {{ Spawns Emacs }} --
+  awful.key({ modkey,           }, "e", function() awful.util.spawn("emacs") end),
 
 	-- {{ Volume Control }} --
 	awful.key({     }, "XF86AudioRaiseVolume", function() awful.util.spawn("amixer set Master 5%+", false) end),
@@ -482,7 +484,10 @@ awful.rules.rules = {
       properties = { tag = tags[1][3], switchtotag = true } },
     -- Set Texmacs to tags number 3 of screen 1 and switch to the tag.
     { rule = { class = "Texmacs" },
-      properties = { tag = tags[1][2], switchtotag = true } },
+      properties = { tag = tags[1][3], switchtotag = true } },
+    -- Set Emacs to tags number 3 of screen 1 and switch to the tag.
+    { rule = { class = "Emacs" },
+      properties = { tag = tags[1][3], switchtotag = true } },
 }
 -- }}}
 
