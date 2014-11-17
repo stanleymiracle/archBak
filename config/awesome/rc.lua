@@ -277,6 +277,9 @@ globalkeys = awful.util.table.join(
 	-- {{ Opens firefox }} --
 	awful.key({ modkey,           }, "v", function() awful.util.spawn("firefox") end),
 
+  -- {{ Opens firefox-aurora }} --
+  awful.key({ modkey,           }, "j", function() awful.util.spawn("firefox-aurora") end),
+
 	-- {{ Opens google-chrome-stable -incognito }} --
 	awful.key({ modkey,           }, "c", function() awful.util.spawn("google-chrome-stable -incognito") end),
 
@@ -299,7 +302,7 @@ globalkeys = awful.util.table.join(
 	
 	-- {{ Backlight Control }} --
 	awful.key({     }, "XF86MonBrightnessUp",   function () awful.util.spawn("xbacklight -inc 15") end),
-    awful.key({     }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 15") end),
+  awful.key({     }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 15") end),
 
     awful.key({ modkey,           }, "j",
         function ()
