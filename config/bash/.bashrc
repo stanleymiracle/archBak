@@ -4,7 +4,6 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
@@ -38,3 +37,4 @@ alias paclf='pacman -Ql'
 
 complete -cf sudo
 complete -cf man
+

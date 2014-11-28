@@ -292,9 +292,7 @@ globalkeys = awful.util.table.join(
   -- {{ Spawns texmacs }} --
   awful.key({ modkey,           }, "t", function() awful.util.spawn("texmacs") end),
 
-  -- {{ Spawns Emacs }} --
-  awful.key({ modkey,           }, "e", function() awful.util.spawn("emacs") end),
-
+  
 	-- {{ Volume Control }} --
 	awful.key({     }, "XF86AudioRaiseVolume", function() awful.util.spawn("amixer set Master 5%+", false) end),
 	awful.key({     }, "XF86AudioLowerVolume", function() awful.util.spawn("amixer set Master 5%-", false) end),
@@ -461,7 +459,7 @@ awful.rules.rules = {
                      buttons = clientbuttons } },
     -- Set Xterm as floating with a fixed position
  	  { rule = { class = "XTerm" }, 
- 	  properties = { floating = true }, callback = function(c) c:geometry({x=0, y=19}) end},
+ 	  properties = { floating = false }, callback = function(c) c:geometry({x=0, y=19}) end},
  	  -- Set MPlayer as floating
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
@@ -488,9 +486,7 @@ awful.rules.rules = {
     -- Set Texmacs to tags number 3 of screen 1 and switch to the tag.
     { rule = { class = "Texmacs" },
       properties = { tag = tags[1][3], switchtotag = true } },
-    -- Set Emacs to tags number 3 of screen 1 and switch to the tag.
-    { rule = { class = "Emacs" },
-      properties = { tag = tags[1][3], switchtotag = true } },
+    
 }
 -- }}}
 
