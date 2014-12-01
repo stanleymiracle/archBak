@@ -278,7 +278,7 @@ globalkeys = awful.util.table.join(
 	awful.key({ modkey,           }, "v", function() awful.util.spawn("firefox") end),
 
   -- {{ Opens firefox-aurora }} --
-  awful.key({ modkey,           }, "j", function() awful.util.spawn("firefox-aurora") end),
+  awful.key({ modkey,           }, "d", function() awful.util.spawn("firefox-aurora") end),
 
 	-- {{ Opens google-chrome-stable -incognito }} --
 	awful.key({ modkey,           }, "c", function() awful.util.spawn("google-chrome-stable -incognito") end),
@@ -291,6 +291,8 @@ globalkeys = awful.util.table.join(
 
   -- {{ Spawns texmacs }} --
   awful.key({ modkey,           }, "t", function() awful.util.spawn("texmacs") end),
+  -- {{ Spawns emacs }} --
+  awful.key({ modkey,           }, "e", function() awful.util.spawn("emacs") end),
 
   
 	-- {{ Volume Control }} --
@@ -462,7 +464,7 @@ awful.rules.rules = {
  	  properties = { floating = false }, callback = function(c) c:geometry({x=0, y=19}) end},
  	  -- Set MPlayer as floating
     { rule = { class = "MPlayer" },
-      properties = { floating = true } },
+      properties = { floating = true, tag = tags[1][3], switchtotag = true } },
     -- Set Thunar as floating
     { rule = { class = "Thunar" },
       properties = { floating = true } },
@@ -485,6 +487,9 @@ awful.rules.rules = {
       properties = { tag = tags[1][3], switchtotag = true } },
     -- Set Texmacs to tags number 3 of screen 1 and switch to the tag.
     { rule = { class = "Texmacs" },
+      properties = { tag = tags[1][3], switchtotag = true } },
+    -- Set Emacs to tags number 3 of screen 1 and switch to the tag.
+    { rule = { class = "Emacs" },
       properties = { tag = tags[1][3], switchtotag = true } },
     
 }
