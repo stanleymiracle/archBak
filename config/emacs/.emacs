@@ -16,6 +16,7 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "#111111" :foreground "#babdb6" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
 
+;; autoload paredit-mode
 (autoload 'paredit-mode "~/.emacs.d/paredit.el"
   "Minor mode for pseudo-structurally editing Lisp code."
   t)
