@@ -1,10 +1,25 @@
+
+;; load path
+(add-to-list 'load-path "~/.emacs.d/extra")
+
+;; set up package repository
+(require 'package)
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+			 ("melpa" . "http://melpa.org/packages/")))
+
+;; disable backup
+(setq backup-inhibited t)
+
+;; ---------------------- Customization -----------------
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+   ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(blink-cursor-mode nil)
- '(custom-enabled-themes (quote (wombat)))
+ '(custom-enabled-themes (quote (deeper-blue)))
  '(line-number-mode t)
  '(menu-bar-mode nil)
  '(scroll-bar-mode nil)
@@ -16,17 +31,15 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "#111111" :foreground "#babdb6" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
 
-;; autoload paredit-mode
-(autoload 'paredit-mode "~/.emacs.d/paredit.el"
+;; ---------------------- Paredit-Mode ------------------
+(autoload 'paredit-mode "paredit"
   "Minor mode for pseudo-structurally editing Lisp code."
   t)
 
-;;;;;;;;;;;;
-;; Scheme 
-;;;;;;;;;;;;
+;; ---------------------- Scheme ------------------------
 
 (require 'cmuscheme)
-(setq scheme-program-name "petite")         ;; 如果用 Petite 就改成 "petite"
+(setq scheme-program-name "petite")
 
 
 ;; bypass the interactive question and start the default interpreter
