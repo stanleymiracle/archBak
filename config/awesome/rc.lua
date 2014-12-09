@@ -293,6 +293,8 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey,           }, "t", function() awful.util.spawn("texmacs") end),
   -- {{ Spawns emacs }} --
   awful.key({ modkey,           }, "e", function() awful.util.spawn("emacs") end),
+  -- {{ Spawns slock }} --
+  awful.key({ modkey,           }, "l", function() awful.util.spawn("slock") end),
 
   
 	-- {{ Volume Control }} --
