@@ -95,7 +95,7 @@ xinit #open xwindow
 # graphic application installation #
 ####################################
 pacman -S firefox flashplugin evince feh eclipse transmission-qt mplayer
-pacman -S tmux gedit gnumeric qcad dosfstools
+pacman -S tmux gedit gnumeric qcad dosfstools screenlets wordnet
 
 ############################ 
 # preference configuration #

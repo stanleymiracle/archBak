@@ -291,10 +291,15 @@ globalkeys = awful.util.table.join(
 
   -- {{ Spawns texmacs }} --
   awful.key({ modkey,           }, "t", function() awful.util.spawn("texmacs") end),
+
   -- {{ Spawns emacs }} --
   awful.key({ modkey,           }, "e", function() awful.util.spawn("emacs") end),
+
   -- {{ Spawns slock }} --
   awful.key({ modkey,           }, "l", function() awful.util.spawn("slock") end),
+
+  -- {{ Spawns xpdf }} --
+  awful.key({ modkey,           }, "g", function() awful.util.spawn("xpdf") end),
 
   
 	-- {{ Volume Control }} --
@@ -492,6 +497,9 @@ awful.rules.rules = {
       properties = { tag = tags[1][3], switchtotag = true } },
     -- Set Emacs to tags number 3 of screen 1 and switch to the tag.
     { rule = { class = "Emacs" },
+      properties = { tag = tags[1][3], switchtotag = true } },
+     -- Set Emacs to tags number 3 of screen 1 and switch to the tag.
+    { rule = { class = "Xpdf" },
       properties = { tag = tags[1][3], switchtotag = true } },
     
 }
