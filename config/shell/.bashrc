@@ -19,6 +19,7 @@ alias wifi='sudo wifi-menu'
 alias wifis='iw dev wlp1s0 link'
 alias off='sudo poweroff'
 alias rst='sudo reboot'
+alias play='mplayer *.flac'
 
 # pacman tips
 alias pacman='sudo pacman'
