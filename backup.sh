@@ -4,6 +4,5 @@ cp ~/.xinitrc ~/note/archBak/config/shell/.xinitrc
 cp ~/.Xresources ~/note/archBak/config/shell/.Xresources
 cp ~/.bash_profile ~/note/archBak/config/shell/.bash_profile
 cp ~/.emacs ~/note/archBak/config/emacs/.emacs
-cp -r ~/.emacs.d ~/note/archBak/config/emacs/.emacs.d
 cp ~/.mplayer/config ~/note/archBak/config/mplayer/config
 cp /etc/vimrc ~/note/archBak/config/vim/vimrc
