@@ -25,7 +25,7 @@ alias rst='sudo reboot'
 alias play='mplayer *.flac'
 
 # git shortcuts
-alias gitcommit='git commit -am'
+alias gitcommit='git commit -m'
 alias gitpush='git push origin master'
 
 # pacman tips
@@ -49,6 +49,6 @@ complete -cf man
 
 # temperary alias
 alias cds='cd ~/repo/babysteps/scheme/'
-alias abk='cd ~/repo/archBak/ && sh backup.sh && gitcommit "UPDATE" && gitpush && cd && clear'
-alias bbk='cd ~/repo/babysteps/ && gitcommit "UPDATE" && gitpush && cd && clear'
+alias abk='cd ~/repo/archBak/ && sh backup.sh && git add . && gitcommit "UPDATE" && gitpush && cd && clear'
+alias bbk='cd ~/repo/babysteps/ && git add . && gitcommit "UPDATE" && gitpush && cd && clear'
 
