@@ -21,6 +21,10 @@ alias off='sudo poweroff'
 alias rst='sudo reboot'
 alias play='mplayer *.flac'
 
+# git shortcuts
+alias gitcommit='git commit -a -m'
+alias gitpush='git push origin master'
+
 # pacman tips
 alias pacman='sudo pacman'
 alias pacupg='sudo pacman -Syyu'
