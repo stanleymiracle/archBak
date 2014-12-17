@@ -6,3 +6,4 @@ cp ~/.bash_profile ~/note/archBak/config/shell/.bash_profile
 cp ~/.emacs ~/note/archBak/config/emacs/.emacs
 cp ~/.mplayer/config ~/note/archBak/config/mplayer/config
 cp /etc/vimrc ~/note/archBak/config/vim/vimrc
+cp ~/.xpdfrc config/xpdf/.xpdfrc
