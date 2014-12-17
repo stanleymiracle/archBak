@@ -9,6 +9,9 @@ alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
 # modify command
+alias .='pwd'
+alias ..='cd ..'
+alias ...='cd ../..'
 alias la='ls -a'
 alias ll='ls -al'
 alias vi='vim'
@@ -22,7 +25,7 @@ alias rst='sudo reboot'
 alias play='mplayer *.flac'
 
 # git shortcuts
-alias gitcommit='git commit -a -m'
+alias gitcommit='git commit -am'
 alias gitpush='git push origin master'
 
 # pacman tips
@@ -43,4 +46,9 @@ alias paclf='pacman -Ql'
 
 complete -cf sudo
 complete -cf man
+
+# temperary alias
+alias cds='cd ~/repo/babysteps/scheme/'
+alias abk='cd ~/repo/archBak/ && sh backup.sh && gitcommit "UPDATE" && gitpush && cd && clear'
+alias bbk='cd ~/repo/babysteps/ && gitcommit "UPDATE" && gitpush && cd && clear'
 
