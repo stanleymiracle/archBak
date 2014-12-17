@@ -5,12 +5,12 @@
 ;; set up package repository
 (require 'package)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-												 ("melpa" . "http://melpa.org/packages/")))
-
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 ;;---------------------- simple config -------------------
 (setq frame-title-format "%b - emacs")
-(setq user-full-name "Yiqing Liu")
+(setq user-full-name "Stanley Miracle")
 (setq user-mail-address "logicomiracle@gmail.com")
 
 (setq backup-inhibited t)
