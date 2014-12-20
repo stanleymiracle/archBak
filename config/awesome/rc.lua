@@ -330,7 +330,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end),
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto),
     
-    -- Tag/Screen switching
+    -- Tag switching
     awful.key({ Alt,              }, "Tab", awful.tag.viewnext),
     awful.key({ Alt,    "Shift"   }, "Tab", awful.tag.viewprev),
     awful.key({ modkey,           }, "Tab",
@@ -340,6 +340,21 @@ globalkeys = awful.util.table.join(
                 client.focus:raise()
             end
         end),
+
+    -- Screen switching
+    awful.key({ modkey, "Control"   }, "Left", 
+        function()
+            for i = 1, screen.count() do
+                awful.tag.viewprev(i)
+            end
+    end ),
+
+    awful.key({ modkey, "Control"   }, "Right", 
+        function()
+            for i = 1, screen.count() do
+                awful.tag.viewnext(i)
+            end
+    end ),
     
     -- Float manipulation
 	  awful.key({ modkey,  Alt      }, "Up",    function () awful.client.moveresize(  0, -20,   0,   0) end),
