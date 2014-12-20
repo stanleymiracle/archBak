@@ -50,4 +50,4 @@ complete -cf man
 # temperary alias
 alias cds='cd ~/repo/babysteps/scheme/'
 alias abk='cd ~/repo/archBak/ && sh backup.sh && gitcommit "UPDATE" && gitpush && cd && clear'
-
+alias sbk='cd ~/repo/babysteps/ && sh backup.sh && gitcommit "UPDATE" && gitpush && cd && clear'
