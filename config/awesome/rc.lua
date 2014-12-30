@@ -89,7 +89,7 @@ myawesomemenu = {
    { "manual", terminal .. " -e man awesome" },
    { "edit config", editor_cmd .. " " .. awesome.conffile },
    { "restart", awesome.restart },
-   { "quit", awesome.quit }
+   { "quit", awesome.quit },
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon }
@@ -106,6 +106,113 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- {{{ Wibox
 -- Create a textclock widget
 mytextclock = awful.widget.textclock()
+
+local string = {format = string.format}
+local os = {date = os.date, time = os.time}
+
+local cal = {}
+
+local tooltip
+local state = {}
+local current_day_format = '<span color="#ff0000">%s</span>'
+
+function displayMonth(month,year,weekStart)
+  local t,wkSt=os.time{year=year, month=month+1, day=0},weekStart or 1
+  local d=os.date("*t",t)
+  local mthDays,stDay=d.day,(d.wday-d.day-wkSt+1)%7
+
+  local lines = "    "
+
+  for x=0,6 do
+    lines = lines .. os.date("%a ",os.time{year=2006,month=1,day=x+wkSt})
+  end
+
+  lines = lines .. "\n" .. os.date(" %V",os.time{year=year,month=month,day=1})
+
+  local writeLine = 1
+  while writeLine < (stDay + 1) do
+    lines = lines .. "    "
+    writeLine = writeLine + 1
+  end
+
+        for d=1,mthDays do
+                local x = d
+                local t = os.time{year=year,month=month,day=d}
+                if writeLine == 8 then
+                        writeLine = 1
+                        lines = lines .. "\n" .. os.date(" %V",t)
+                end
+                if os.date("%Y-%m-%d") == os.date("%Y-%m-%d", t) then
+                        x = string.format(current_day_format, d)
+                end
+                if d < 10 then
+                        x = " " .. x
+                end
+                lines = lines .. "  " .. x
+                writeLine = writeLine + 1
+        end
+        if stDay + mthDays < 36 then
+                lines = lines .. "\n"
+        end
+        if stDay + mthDays < 29 then
+                lines = lines .. "\n"
+        end
+        local header = os.date("%B %Y\n",os.time{year=year,month=month,day=1})
+
+  return header .. "\n" .. lines
+end
+
+
+function cal.register(mywidget, custom_current_day_format)
+  if custom_current_day_format then current_day_format = custom_current_day_format end
+
+  if not tooltip then
+    tooltip = awful.tooltip({})
+                function tooltip:update()
+                        local month, year = os.date('%m'), os.date('%Y')
+                        state = {month, year}
+                        tooltip:set_markup(string.format('<span font_desc="monospace">%s</span>', displayMonth(month, year, 2)))
+                end
+                tooltip:update()
+  end
+  tooltip:add_to_object(mywidget)
+
+  mywidget:connect_signal("mouse::enter",tooltip.update)
+
+  mywidget:buttons(awful.util.table.join(
+  awful.button({ }, 1, function()
+    switchMonth(1)
+  end),
+  awful.button({ }, 3, function()
+    switchMonth(-1)
+  end),
+  awful.button({ }, 4, function()
+    switchMonth(1)
+  end),
+  awful.button({ }, 5, function()
+    switchMonth(-1)
+  end),
+  awful.button({ 'Shift' }, 1, function()
+    switchMonth(12)
+  end),
+  awful.button({ 'Shift' }, 3, function()
+    switchMonth(-12)
+  end),
+  awful.button({ 'Shift' }, 4, function()
+    switchMonth(12)
+  end),
+  awful.button({ 'Shift' }, 5, function()
+    switchMonth(-12)
+  end)))
+end
+
+function switchMonth(delta)
+  state[1] = state[1] + (delta or 1)
+  local text = string.format('<span font_desc="monospace">%s</span>', displayMonth(state[1], state[2], 2))
+  tooltip:set_markup(text)
+end
+
+cal.register(mytextclock)
 
 -- Create a battery widget
 batterywidget = wibox.widget.textbox()    
@@ -150,7 +257,7 @@ end
 -- Create a volume widget
 volume = wibox.widget.textbox()
 vicious.register(volume, vicious.widgets.volume,
-'<span> |♩$1</span>', 0.3, "Master")
+'<span> |♩$1</span>', 0.1, "Master")
 
 -- Create a network widget
 netwidget = wibox.widget.textbox()
@@ -483,21 +590,19 @@ awful.rules.rules = {
                      buttons = clientbuttons } },
     -- Set Xterm as floating with a fixed position
  	  { rule = { class = "XTerm" }, 
- 	  properties = { floating = true }, callback = function(c) c:geometry({x=0, y=19}) end},
+ 	  properties = { floating = true }, },---callback = function(c) c:geometry({x=0, y=19}) end},
  	  -- Set MPlayer as floating
     { rule = { class = "MPlayer" },
       properties = { floating = true, tag = tags[1][3], switchtotag = true } },
     -- Set Thunar as floating
     { rule = { class = "Thunar" },
       properties = { floating = true } },
-    -- -- Set Texmacs as floating
-    -- { rule = { class = "Texmacs" },
-    --   properties = { floating = true } },
+    -- Set gimp as floating
     { rule = { class = "gimp" },
       properties = { floating = true } },
     -- Set Thunar to tags number 1 of screen 1 and switch to the tag.
-    { rule = { class = "Thunar" },
-      properties = { tag = tags[1][1], switchtotag = true } },
+    --{ rule = { class = "Thunar" },
+    --  properties = { tag = tags[1][1], switchtotag = true } },
     -- Set Firefox to tags number 2 of screen 1 and switch to the tag.
     { rule = { class = "Firefox" },
       properties = { tag = tags[1][2], switchtotag = true } },
@@ -508,8 +613,8 @@ awful.rules.rules = {
     { rule = { class = "Sublime_text" },
       properties = { tag = tags[1][3], switchtotag = true } },
     -- Set Texmacs to tags number 3 of screen 1 and switch to the tag.
-    { rule = { class = "Texmacs" },
-      properties = { tag = tags[1][3], switchtotag = true } },
+    --{ rule = { class = "Texmacs" },
+    --  properties = { floating = true, tag = tags[1][3], switchtotag = true } },
     -- Set Emacs to tags number 3 of screen 1 and switch to the tag.
     { rule = { class = "Emacs" },
       properties = { tag = tags[1][3], switchtotag = true } },
