@@ -263,10 +263,12 @@ vicious.register(volume, vicious.widgets.volume,
 netwidget = wibox.widget.textbox()
 vicious.register(netwidget, vicious.widgets.net, function(widget, args)
     local interface = ""
-    if args["{wlp1s0 carrier}"] == 1 then
-        interface = "wlp1s0"
+    if args["{enp0s20u2 carrier}"] == 1 then
+        interface = "enp0s20u2"
     elseif args["{enp2s0 carrier}"] == 1 then
         interface = "enp2s0"
+    elseif args["{wlp1s0 carrier}"] == 1 then
+        interface = "wlp1s0"
     else
         return "timeout"
     end
