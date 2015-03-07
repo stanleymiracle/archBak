@@ -46,7 +46,7 @@ terminal = "xterm"
 editor = os.getenv("EDITOR") or "Sublime_text"
 editor_cmd = terminal .. " -e " .. editor
 
--- Default modkey.
+-- Default modkey, alt
 -- Usually, Mod4 is the key with a logo between Control and Alt.
 -- If you do not like this or do not have such a key,
 -- I suggest you to remap Mod4 to another key using xmodmap or other tools.
@@ -110,6 +110,9 @@ mytextclock = awful.widget.textclock()
 local string = {format = string.format}
 local os = {date = os.date, time = os.time}
 
+
+local calendar = nil
+local offset = 0
 local cal = {}
 
 local tooltip
@@ -246,7 +249,7 @@ function batteryNotice(adapter)
                                 fg="#ff0000",
                                 bg="#deb887",
                                 timeout = 1, })
-      end
+    end
     else
     end
     fcur:close()
@@ -258,6 +261,8 @@ end
 volume = wibox.widget.textbox()
 vicious.register(volume, vicious.widgets.volume,
 '<span> |♩$1</span>', 0.1, "Master")
+-- Create a volume notification
+
 
 -- Create a network widget
 netwidget = wibox.widget.textbox()
@@ -378,6 +383,8 @@ root.buttons(awful.util.table.join(
 -- }}}
 
 -- {{{ Key bindings
+
+
 globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
@@ -412,9 +419,9 @@ globalkeys = awful.util.table.join(
 
   
 	-- {{ Volume Control }} --
-	awful.key({     }, "XF86AudioRaiseVolume", function() awful.util.spawn("amixer set Master 5%+", false) end),
-	awful.key({     }, "XF86AudioLowerVolume", function() awful.util.spawn("amixer set Master 5%-", false) end),
-	awful.key({     }, "XF86AudioMute", function() awful.util.spawn("amixer set Master toggle", false) end),
+	awful.key({     }, "XF86AudioRaiseVolume", function() awful.util.spawn("sh /home/linuxfish/.config/awesome/sound.sh up", false) end),
+	awful.key({     }, "XF86AudioLowerVolume", function() awful.util.spawn("sh /home/linuxfish/.config/awesome/sound.sh down", false) end),
+	awful.key({     }, "XF86AudioMute", function() awful.util.spawn("sh /home/linuxfish/.config/awesome/sound.sh mute", false) end),
 	
 	-- {{ Backlight Control }} --
 	awful.key({     }, "XF86MonBrightnessUp",   function () awful.util.spawn("xbacklight -inc 15") end),

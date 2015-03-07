@@ -1,4 +1,7 @@
 cp ~/.config/awesome/rc.lua ~/repo/archBak/config/awesome/rc.lua
+cp ~/.config/awesome/sound.sh ~/repo/archBak/config/awesome/sound.sh
+cp ~/.config/awesome/ones.sh ~/repo/archBak/config/awesome/ones.sh
+cp ~/.config/awesome/dual.sh ~/repo/archBak/config/awesome/dual.sh
 cp ~/.bashrc ~/repo/archBak/config/shell/.bashrc
 cp ~/.xinitrc ~/repo/archBak/config/shell/.xinitrc
 cp ~/.Xresources ~/repo/archBak/config/shell/.Xresources
