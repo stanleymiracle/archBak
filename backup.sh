@@ -6,6 +6,7 @@ cp ~/.bashrc ~/repo/archBak/config/shell/.bashrc
 cp ~/.xinitrc ~/repo/archBak/config/shell/.xinitrc
 cp ~/.Xresources ~/repo/archBak/config/shell/.Xresources
 cp ~/.bash_profile ~/repo/archBak/config/shell/.bash_profile
+cp ~/repo/8812au.sh ~/repo/archBak/config/shell/8812au.sh
 cp ~/.emacs ~/repo/archBak/config/emacs/.emacs
 cp ~/.mplayer/config ~/repo/archBak/config/mplayer/config
 cp /etc/vimrc ~/repo/archBak/config/vim/vimrc

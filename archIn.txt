@@ -1,10 +1,23 @@
+
+#######################
+# connect to internet #
+#######################
+wifi-menu
+ping -c 3 google.com
+
 ##################### 
 # file system setup #
 #####################
-cfdisk /dev/sdX
-	# 256MB boot
-	# 10240MB /
-	# the rest /home
+#cfdisk /dev/sdX
+#	# 256MB boot
+#	# 10240MB /
+#	# the rest /home
+gdisk /dev/sdX
+	# d -> delete all existing partition
+	# o -> create new table
+	# n -> create partition 1
+	# n -> create partition 2
+	# n -> create partition 3
 mkfs.ext2 /dev/sdX1
 mkfs.ext4 /dev/sdX2
 mkfs.ext4 /dev/sdX3
@@ -13,9 +26,9 @@ mkdir /mnt/boot && mount /dev/sdX1 /mnt/boot
 mkdir /mnt/home && mount /dev/sdX3 /mnt/home
 
 #######################
-# connect to internet #
+# change pacman mirror#
 #######################
-wifi-menu
+nano /etc/pacman.d/mirrorlist
 
 ####################### 
 # install base system #
@@ -28,7 +41,7 @@ pacstrap /mnt base base-devel
 genfstab -p /mnt >> /mnt/etc/fstab
 nano /mnt/etc/fstab
 	# /dev/sda1	 /boot	ext2	defaults,relatime,stripe=4	0 2
-	# /dev/sda2	 /	ext4	defaults,noatime,discard	0 1
+	# /dev/sda2	 /	    ext4	defaults,noatime,discard	0 1
 	# /dev/sda3	 /home	ext4	defaults,noatime,discard,data=ordered	0 2
 
 arch-chroot /mnt
@@ -69,16 +82,25 @@ exit
 umount -R /mnt
 reboot
 
+#######################
+# change pacman mirror#
+#######################
+nano /etc/pacman.d/mirrorlist
+
+#######################
+# connect to internet #
+#######################
+wifi-menu
+ping -c 3 google.com
+
 ############################### 
 # graphic system installation #
 ###############################
 pacman -S xorg-server xorg-xinit xorg-server-utils xf86-input-synaptics xterm
 
-pacman -S alsa-utils
+pacman -S alsa-utils ttf-dejavu ttf-droid git vim
 
-pacman -S ttf-dejavu ttf-droid git
-
-git clone # themes from github
+git clone http://github.com/stanleymiracle/archBak # themes from github
 
 pacman -S awesome vicious
 mkdir -p ~/.config/awesome/
@@ -94,8 +116,8 @@ xinit #open xwindow
 #################################### 
 # graphic application installation #
 ####################################
-pacman -S firefox flashplugin evince feh eclipse transmission-qt mplayer
-pacman -S tmux gedit gnumeric qcad dosfstools screenlets wordnet
+pacman -S firefox flashplugin feh eclipse transmission-qt mplayer
+pacman -S tmux gnumeric qcad dosfstools screenlets wordnet
 
 ############################ 
 # preference configuration #
