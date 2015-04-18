@@ -11,3 +11,5 @@ cp ~/.emacs ~/repo/archBak/config/emacs/.emacs
 cp ~/.mplayer/config ~/repo/archBak/config/mplayer/config
 cp /etc/vimrc ~/repo/archBak/config/vim/vimrc
 cp ~/.xpdfrc ~/repo/archBak/config/xpdf/.xpdfrc
+pacman -Qqen > ~/repo/archBak/pkglist.txt
+pacman -Qemq > ~/repo/archBak/aurlist.txt
