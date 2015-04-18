@@ -16,9 +16,11 @@ xrdb -merge ~/.Xresources
 # turn off monitor blanking
 xset -dpms
 xset s off
+volnoti &
+conky &
 
 # export path for android studio
-export ANDROID_SWT=~/android-studio/sdk/tools/lib/x86_64/
+#export ANDROID_SWT=~/android-studio/sdk/tools/lib/x86_64/
 
 # exec gnome-session
 # exec startkde
