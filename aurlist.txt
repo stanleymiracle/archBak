@@ -1,0 +1,8 @@
+arduino
+google-chrome
+libgcrypt15
+petite-chez-scheme
+pyrit
+tor-browser-en
+volnoti
+xpdf
