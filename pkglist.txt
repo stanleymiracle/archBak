@@ -78,8 +78,8 @@ mtpfs
 nano
 netctl
 nethack
-newsbeuter
 ntfs-3g
+p7zip
 pacman
 patch
 pciutils
@@ -93,7 +93,7 @@ procps-ng
 psmisc
 pv
 python-pyserial
-qcad
+racket
 reaver
 reiserfsprogs
 rlwrap
@@ -102,6 +102,7 @@ s-nail
 sed
 shadow
 slock
+sublime-text
 sudo
 synergy
 sysfsutils
@@ -119,10 +120,17 @@ ttf-dejavu
 ttf-droid
 ttf-liberation
 unrar
+unzip
 usbutils
 util-linux
 vicious
 vim
+virtualbox
+virtualbox-ext-oracle
+virtualbox-guest-iso
+virtualbox-guest-modules
+virtualbox-guest-utils
+virtualbox-host-modules
 vorbis-tools
 wget
 which
@@ -130,7 +138,6 @@ wireshark-cli
 wpa_actiond
 wpa_supplicant
 wxmaxima
-xchat
 xchm
 xf86-input-joystick
 xf86-input-keyboard

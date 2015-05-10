@@ -8,6 +8,8 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
+export VBOX_USB=usbfs
+
 # modify command
 alias .='pwd'
 alias ..='cd ..'

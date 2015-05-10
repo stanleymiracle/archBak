@@ -393,31 +393,34 @@ globalkeys = awful.util.table.join(
 	-- {{ Opens firefox }} --
 	awful.key({ modkey,           }, "v", function() awful.util.spawn("firefox") end),
 
-  -- {{ Opens firefox-aurora }} --
-  awful.key({ modkey,           }, "d", function() awful.util.spawn("firefox-aurora") end),
-
 	-- {{ Opens google-chrome-stable -incognito }} --
 	awful.key({ modkey,           }, "c", function() awful.util.spawn("google-chrome-stable -incognito") end),
 
-	-- {{ Spawns thunar }} --
+	-- {{ Opens thunar }} --
 	awful.key({ modkey,           }, "z", function() awful.util.spawn("thunar") end),
 
-	-- {{ Spawns sublime_text }} --
+	-- {{ Opens sublime_text }} --
 	awful.key({ modkey,           }, "s", function() awful.util.spawn("sublime_text") end),
 
-  -- {{ Spawns texmacs }} --
+  -- {{ Opens texmacs }} --
   awful.key({ modkey,           }, "t", function() awful.util.spawn("texmacs") end),
 
-  -- {{ Spawns emacs }} --
+  -- {{ Opens emacs }} --
   awful.key({ modkey,           }, "e", function() awful.util.spawn("emacs") end),
 
-  -- {{ Spawns slock }} --
+  -- {{ Opens slock }} --
   awful.key({ modkey,           }, "l", function() awful.util.spawn("slock") end),
 
-  -- {{ Spawns xpdf }} --
+  -- {{ Opens xpdf }} --
   awful.key({ modkey,           }, "g", function() awful.util.spawn("xpdf") end),
 
-  
+  -- {{ Opens DrRacket }} --
+  awful.key({ modkey,           }, "d", function() awful.util.spawn("drracket") end),
+
+
+  -- {{ Start capturing screen }} --
+  awful.key({ Alt,           }, "c", function() awful.util.spawn("import -window linuxfish cap.png") end),
+    
 	-- {{ Volume Control }} --
 	awful.key({     }, "XF86AudioRaiseVolume", function() awful.util.spawn("sh /home/linuxfish/.config/awesome/sound.sh up", false) end),
 	awful.key({     }, "XF86AudioLowerVolume", function() awful.util.spawn("sh /home/linuxfish/.config/awesome/sound.sh down", false) end),
@@ -599,7 +602,7 @@ awful.rules.rules = {
                      buttons = clientbuttons } },
     -- Set Xterm as floating with a fixed position
  	  { rule = { class = "XTerm" }, 
- 	  properties = { floating = true }, },---callback = function(c) c:geometry({x=0, y=19}) end},
+ 	    properties = { floating = true }, },---callback = function(c) c:geometry({x=0, y=19}) end},
  	  -- Set MPlayer as floating
     { rule = { class = "MPlayer" },
       properties = { floating = true, tag = tags[1][3], switchtotag = true } },

@@ -10,4 +10,3 @@ sudo depmod -a
 
 sudo modprobe 8812au
 
-sudo wifi-menu enp0s20u2
