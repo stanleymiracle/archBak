@@ -78,6 +78,7 @@ mtpfs
 nano
 netctl
 nethack
+npm
 ntfs-3g
 p7zip
 pacman

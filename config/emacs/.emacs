@@ -10,7 +10,7 @@
 
 ;;---------------------- simple config -------------------
 (setq frame-title-format "%b - emacs")
-(setq user-full-name "Stanley Miracle")
+(setq user-full-name "Yiqing Liu")
 (setq user-mail-address "logicomiracle@gmail.com")
 
 (setq backup-inhibited t)
@@ -22,6 +22,7 @@
 (setq kill-ring-max 3000)
 (setq undo-limit 536000000)
 (setq default-fill-column 80)
+(setq default-frame-alist '((height . 45)))
 (setq browse-url-mozilla-program "firefox")
 
 (setq-default indent-tabs-mode nil)
@@ -69,28 +70,22 @@
 (display-time)
 
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(blink-cursor-mode nil)
+ '(column-number-mode t)
  '(custom-enabled-themes (quote (deeper-blue)))
- '(menu-bar-mode nil)
+ '(display-time-mode t)
  '(scroll-bar-mode nil)
- '(tool-bar-mode nil))
+ '(show-paren-mode t))
 (custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#242424" :foreground "#f6f3e8" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 98 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
+ '(default ((t (:inherit nil :stipple nil :background "#242424" :foreground "#f6f3e8" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 100 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
 
 
 
 ;; ------------------- language modes -------------------
 (add-to-list 'auto-mode-alist '("\\.ss$" . scheme-mode))
+(add-to-list 'auto-mode-alist '("\\.yin$" . scheme-mode))
 (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.js$" . javascript-mode))
 (add-to-list 'auto-mode-alist '("\\.css$" . css-mode))

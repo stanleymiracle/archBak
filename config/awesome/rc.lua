@@ -629,7 +629,7 @@ awful.rules.rules = {
     --  properties = { floating = true, tag = tags[1][3], switchtotag = true } },
     -- Set Emacs to tags number 3 of screen 1 and switch to the tag.
     { rule = { class = "Emacs" },
-      properties = { tag = tags[1][3], switchtotag = true } },
+      properties = { floating = true } },
     
 }
 -- }}}
