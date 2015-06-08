@@ -11,5 +11,6 @@ cp ~/.emacs.d/init.el ~/repo/archBak/config/emacs/init.el
 cp ~/.mplayer/config ~/repo/archBak/config/mplayer/config
 cp /etc/vimrc ~/repo/archBak/config/vim/vimrc
 cp ~/.xpdfrc ~/repo/archBak/config/xpdf/.xpdfrc
+cp ~/.conkyrc ~/repo/archBak/config/conky/.conkyrc
 pacman -Qqen > ~/repo/archBak/pkglist.txt
 pacman -Qemq > ~/repo/archBak/aurlist.txt
