@@ -105,7 +105,6 @@ shadow
 slock
 sublime-text
 sudo
-synergy
 sysfsutils
 syslinux
 systemd-sysvcompat

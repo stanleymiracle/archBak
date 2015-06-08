@@ -1,4 +1,9 @@
 
+######################
+# install via usb    #
+######################
+dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx && sync
+
 #######################
 # connect to internet #
 #######################
