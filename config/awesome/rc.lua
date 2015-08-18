@@ -244,7 +244,7 @@ function batteryNotice(adapter)
         local battery = math.floor(cur * 100 / cap)
         if sta:match("Discharging") and tonumber(battery) <= 10 then
                naughty.notify({ preset = naughty.config.presets.critical,
-                                title = "Batterie Low!",
+                                title = "Battery Low!",
                                 text = " ".. battery .. "% left!",
                                 fg="#ff0000",
                                 bg="#deb887",
@@ -609,8 +609,8 @@ awful.rules.rules = {
     -- Set Thunar as floating
     { rule = { class = "Thunar" },
       properties = { floating = true } },
-    -- Set gimp as floating
-    { rule = { class = "gimp" },
+    -- Set Transmission-qt as floating
+    { rule = { class = "Transmission-qt" },
       properties = { floating = true } },
     -- Set Thunar to tags number 1 of screen 1 and switch to the tag.
     --{ rule = { class = "Thunar" },
@@ -618,7 +618,7 @@ awful.rules.rules = {
     -- Set Firefox to tags number 2 of screen 1 and switch to the tag.
     { rule = { class = "Firefox" },
       properties = { tag = tags[1][2], switchtotag = true } },
-    -- Set Chromium to tags number 2 of screen 1 and switch to the tag.
+    -- Set google-chrome-stable to tags number 2 of screen 1 and switch to the tag.
     { rule = { class = "Google-chrome-stable" },
       properties = { tag = tags[1][2], switchtotag = true } },
     -- Set Sublime_text to tags number 3 of screen 1 and switch to the tag.

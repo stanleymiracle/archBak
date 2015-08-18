@@ -1,6 +1,7 @@
 arduino
 google-chrome
 google-musicmanager
+httrack
 libgcrypt15
 petite-chez-scheme
 pyrit
