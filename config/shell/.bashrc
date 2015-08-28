@@ -33,7 +33,6 @@ alias gitcommit='git commit -am'
 alias gitpush='git push origin master'
 
 # pacman tips
-alias pacman='sudo pacman'
 alias pacupg='sudo pacman -Syyu'
 alias pacin='sudo pacman -S'
 alias pacins='sudo pacman -U'
