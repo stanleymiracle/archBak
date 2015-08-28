@@ -58,6 +58,7 @@ iw
 jfsutils
 less
 lib32-flashplugin
+libgcrypt15
 libtool
 libutil-linux
 licenses
@@ -74,6 +75,7 @@ maxima
 mdadm
 mpd
 mplayer
+mpv
 mtpfs
 nano
 netctl
@@ -92,6 +94,7 @@ poppler
 processing
 procps-ng
 psmisc
+puddletag
 pv
 python-pyserial
 racket
@@ -130,6 +133,7 @@ virtualbox-ext-oracle
 virtualbox-guest-iso
 virtualbox-guest-modules
 virtualbox-guest-utils
+virtualbox-host-dkms
 virtualbox-host-modules
 vorbis-tools
 wget

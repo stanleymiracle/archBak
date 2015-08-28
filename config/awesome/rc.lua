@@ -268,8 +268,8 @@ vicious.register(volume, vicious.widgets.volume,
 netwidget = wibox.widget.textbox()
 vicious.register(netwidget, vicious.widgets.net, function(widget, args)
     local interface = ""
-    if args["{enp0s20u2 carrier}"] == 1 then
-        interface = "enp0s20u2"
+    if args["{wlp0s20u2 carrier}"] == 1 then
+        interface = "wlp0s20u2"
     elseif args["{enp2s0 carrier}"] == 1 then
         interface = "enp2s0"
     elseif args["{wlp1s0 carrier}"] == 1 then
@@ -606,30 +606,31 @@ awful.rules.rules = {
  	  -- Set MPlayer as floating
     { rule = { class = "MPlayer" },
       properties = { floating = true, tag = tags[1][3], switchtotag = true } },
-    -- Set Thunar as floating
+    -- Set MPv as floating
+    { rule = { class = "Mpv" },
+      properties = { floating = true, tag = tags[1][3], switchtotag = true } },
+    -- Set THunar as floating
     { rule = { class = "Thunar" },
       properties = { floating = true } },
-    -- Set Transmission-qt as floating
+    -- Set TRansmission-qt as floating
     { rule = { class = "Transmission-qt" },
       properties = { floating = true } },
-    -- Set Thunar to tags number 1 of screen 1 and switch to the tag.
-    --{ rule = { class = "Thunar" },
-    --  properties = { tag = tags[1][1], switchtotag = true } },
-    -- Set Firefox to tags number 2 of screen 1 and switch to the tag.
+    -- Set EMacs as floating
+    { rule = { class = "Emacs" },
+      properties = { floating = true } },
+    -- Set FIrefox to tags number 2 of screen 1 and switch to the tag.
     { rule = { class = "Firefox" },
       properties = { tag = tags[1][2], switchtotag = true } },
     -- Set google-chrome-stable to tags number 2 of screen 1 and switch to the tag.
     { rule = { class = "Google-chrome-stable" },
       properties = { tag = tags[1][2], switchtotag = true } },
-    -- Set Sublime_text to tags number 3 of screen 1 and switch to the tag.
+    -- Set SUblime_text to tags number 3 of screen 1 and switch to the tag.
     { rule = { class = "Sublime_text" },
       properties = { tag = tags[1][3], switchtotag = true } },
-    -- Set Texmacs to tags number 3 of screen 1 and switch to the tag.
-    --{ rule = { class = "Texmacs" },
+    -- Set TExmacs to tags number 3 of screen 1 and switch to the tag.
+    --{ rule = { class = "TExmacs" },
     --  properties = { floating = true, tag = tags[1][3], switchtotag = true } },
-    -- Set Emacs to tags number 3 of screen 1 and switch to the tag.
-    { rule = { class = "Emacs" },
-      properties = { floating = true } },
+    
     
 }
 -- }}}
