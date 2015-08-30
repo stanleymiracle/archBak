@@ -74,7 +74,6 @@ maven
 maxima
 mdadm
 mpd
-mplayer
 mpv
 mtpfs
 nano
