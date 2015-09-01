@@ -1,4 +1,5 @@
 arduino
+google-chrome
 google-musicmanager
 masterpdfeditor
 petite-chez-scheme
