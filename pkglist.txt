@@ -12,6 +12,9 @@ awesome
 bash
 binutils
 bison
+blueman
+bluez
+bluez-utils
 bzip2
 calibre
 conky

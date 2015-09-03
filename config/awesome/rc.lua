@@ -223,7 +223,7 @@ batterywidget:set_text(" | Battery | ")
 batterywidgettimer = timer({ timeout = 5 })    
 batterywidgettimer:connect_signal("timeout",    
   function()    
-    fh = assert(io.popen("acpi | cut -d, -f 2,3 -", "r"))    
+    fh = assert(io.popen("acpi | grep 'Battery 1' | cut -d, -f 2,3 -", "r"))    
     batterywidget:set_text(" |" .. fh:read("*l") .. " | ")    
     fh:close()    
   end    

@@ -21,6 +21,7 @@ xset s off
 # startup application in Xwindows
 volnoti &
 conky &
+blueman-applet &
 
 # export path for android studio
 #export ANDROID_SWT=~/android-studio/sdk/tools/lib/x86_64/
