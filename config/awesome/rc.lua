@@ -218,17 +218,17 @@ end
 cal.register(mytextclock)
 
 -- Create a battery widget
-batterywidget = wibox.widget.textbox()    
-batterywidget:set_text(" | Battery | ")    
-batterywidgettimer = timer({ timeout = 5 })    
-batterywidgettimer:connect_signal("timeout",    
-  function()    
-    fh = assert(io.popen("acpi | grep 'Battery 1' | cut -d, -f 2,3 -", "r"))    
-    batterywidget:set_text(" |" .. fh:read("*l") .. " | ")    
-    fh:close()    
-  end    
-)    
-batterywidgettimer:start()
+-- batterywidget = wibox.widget.textbox()    
+-- batterywidget:set_text(" | Battery | ")    
+-- batterywidgettimer = timer({ timeout = 5 })    
+-- batterywidgettimer:connect_signal("timeout",    
+--   function()    
+--     fh = assert(io.popen("acpi | grep 1 | cut -d, -f 2,3 -", "r"))    
+--     batterywidget:set_text(" |" .. fh:read("*l") .. " | ")    
+--     fh:close()    
+--   end    
+-- )    
+-- batterywidgettimer:start()
 -- Create battery notification
 battery_timer = timer({timeout = 2})
 battery_timer:connect_signal("timeout", function()  batteryNotice("BAT1") end)
@@ -260,7 +260,7 @@ end
 -- Create a volume widget
 volume = wibox.widget.textbox()
 vicious.register(volume, vicious.widgets.volume,
-'<span> |♩$1</span>', 0.1, "Master")
+'<span> |♩$1</span> |', 0.1, "Master")
 -- Create a volume notification
 
 
@@ -360,7 +360,7 @@ for s = 1, screen.count() do
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(netwidget)
     right_layout:add(volume)
-    right_layout:add(batterywidget)
+    -- right_layout:add(batterywidget)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
