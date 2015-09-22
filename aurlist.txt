@@ -1,9 +1,9 @@
 arduino
+google-chrome-dev
 google-musicmanager
 masterpdfeditor
 petite-chez-scheme
 pyrit
-tor-browser-en
 volnoti
 winusb
 xpdf

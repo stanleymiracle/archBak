@@ -394,7 +394,7 @@ globalkeys = awful.util.table.join(
 	awful.key({ modkey,           }, "v", function() awful.util.spawn("firefox") end),
 
 	-- {{ Opens google-chrome-stable -incognito }} --
-	awful.key({ modkey,           }, "c", function() awful.util.spawn("google-chrome-stable -incognito") end),
+	awful.key({ modkey,           }, "c", function() awful.util.spawn("google-chrome-unstable -incognito") end),
 
 	-- {{ Opens thunar }} --
 	awful.key({ modkey,           }, "z", function() awful.util.spawn("thunar") end),
@@ -622,7 +622,7 @@ awful.rules.rules = {
     { rule = { class = "Firefox" },
       properties = { tag = tags[1][2], switchtotag = true } },
     -- Set google-chrome-stable to tags number 2 of screen 1 and switch to the tag.
-    { rule = { class = "Google-chrome-stable" },
+    { rule = { class = "google-chrome-unstable" },
       properties = { tag = tags[1][2], switchtotag = true } },
     -- Set SUblime_text to tags number 3 of screen 1 and switch to the tag.
     { rule = { class = "Sublime_text" },
