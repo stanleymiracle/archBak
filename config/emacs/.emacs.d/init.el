@@ -1,12 +1,11 @@
-
-;; load path
-(add-to-list 'load-path "~/.emacs.d/extra")
+(add-to-list 'load-path "~/.emacs.d/extra/")
 
 ;; set up package repository
 (require 'package)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+                         ("melpa" . "http://melpa.org/packages/")))
+(package-initialize)
+(load-theme 'material t)
 
 ;;---------------------- simple config -------------------
 (setq frame-title-format "%b - emacs")
@@ -22,8 +21,13 @@
 (setq kill-ring-max 3000)
 (setq undo-limit 536000000)
 (setq default-fill-column 80)
-(setq default-frame-alist '((height . 45)))
+(setq default-frame-alist '((height . 48)))
 (setq browse-url-mozilla-program "firefox")
+
+
+(tool-bar-mode 0)
+(blink-cursor-mode 0)
+(menu-bar-mode 1)
 
 (setq-default indent-tabs-mode nil)
 (setq default-tab-width 2)
@@ -70,19 +74,9 @@
 (setq display-time-24hr-format nil)
 (display-time)
 
-(custom-set-variables
- '(ansi-color-names-vector
-   ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
- '(blink-cursor-mode nil)
- '(column-number-mode t)
- '(custom-enabled-themes (quote (deeper-blue)))
- '(display-time-mode t)
- '(scroll-bar-mode nil)
- '(show-paren-mode t))
-(custom-set-faces
- '(default ((t (:inherit nil :stipple nil :background "#242424" :foreground "#f6f3e8" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 100 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
-
-
+(when (member "DejaVu Sans Mono" (font-family-list))
+    (add-to-list 'initial-frame-alist '(font . "DejaVu Sans Mono-10"))
+    (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-10")))
 
 ;; ------------------- language modes -------------------
 (add-to-list 'auto-mode-alist '("\\.ss$" . scheme-mode))
@@ -149,6 +143,9 @@
 (add-hook 'scheme-mode-hook
   (lambda ()
     (paredit-mode 1)
-    (define-key scheme-mode-map (kbd "<f5>") 'scheme-send-last-sexp-split-window)
-    (define-key scheme-mode-map (kbd "<f6>") 'scheme-send-definition-split-window)))
+    (define-key scheme-mode-map (kbd "<f5>")
+      'scheme-send-last-sexp-split-window)
+    (define-key scheme-mode-map (kbd "<f6>")
+      'scheme-send-definition-split-window)))
 (put 'dired-find-alternate-file 'disabled nil)
+
