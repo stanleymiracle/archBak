@@ -118,6 +118,7 @@ texinfo
 texmacs
 thunar
 thunar-volman
+tk
 tmux
 tor
 transmission-qt
