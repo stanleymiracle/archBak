@@ -61,7 +61,6 @@ iw
 jfsutils
 less
 lib32-flashplugin
-libgcrypt15
 libtool
 libutil-linux
 licenses
@@ -98,6 +97,7 @@ procps-ng
 psmisc
 puddletag
 pv
+pyrit
 python-pyserial
 racket
 reaver
@@ -108,7 +108,6 @@ s-nail
 sed
 shadow
 slock
-sublime-text
 sudo
 sysfsutils
 syslinux
@@ -131,13 +130,9 @@ usbutils
 util-linux
 vicious
 vim
-virtualbox
-virtualbox-ext-oracle
-virtualbox-guest-iso
 virtualbox-guest-modules
 virtualbox-guest-utils
 virtualbox-host-dkms
-virtualbox-host-modules
 vorbis-tools
 wget
 which

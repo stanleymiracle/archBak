@@ -1,9 +1,10 @@
 arduino
 google-chrome-dev
 google-musicmanager
+libgcrypt15
 masterpdfeditor
 petite-chez-scheme
-pyrit
+sublime-text
 volnoti
 winusb
 xpdf
