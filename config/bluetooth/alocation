@@ -1,0 +1,2 @@
+/etc/udev/rules.d/10-local.rules
+/etc/systemd/system/bluetooth-auto-power@.service
