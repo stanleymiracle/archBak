@@ -101,11 +101,11 @@ ping -c 3 google.com
 ############################### 
 # graphic system installation #
 ###############################
-pacman -S xorg-server xorg-xinit xorg-server-utils xf86-input-synaptics xterm
-
-pacman -S alsa-utils ttf-dejavu ttf-droid git vim
+pacman -S git
 
 git clone http://github.com/stanleymiracle/archBak # themes from github
+
+pacman -S $(< pkglist.txt)
 
 pacman -S awesome vicious
 mkdir -p ~/.config/awesome/
@@ -115,14 +115,7 @@ cp /etc/skel/.xinitrc ~/.xinitrc
 vim ~/.xinitrc
 	# add 'exec awesome' to the end
 
-xinit #open xwindow
-
-
-#################################### 
-# graphic application installation #
-####################################
-pacman -S firefox flashplugin feh eclipse transmission-qt mplayer
-pacman -S tmux gnumeric qcad dosfstools screenlets wordnet
+starx #open xwindow
 
 ############################ 
 # preference configuration #
@@ -148,26 +141,5 @@ vi /etc/systemd/logind.conf
 	# HandleLidSwitch=ignore
 
 vi /etc/bash.bashrc
-	# alias la='ls -a'
-	# alias lal='ls -al'
-	# alias vi='vim'
-	# alias suvi='sudo vim'
-	# alias audio='sudo alsamixer'
-	# alias wifim='sudo wifimenu'
-	# alias poff='sudo poweroff'
-	# alias rst='sudo reboot'
-	# alias pacupg='sudo pacman -Syyu'	# Synchronize with repositories and then upgrade packages for local
-	# alias pacin='sudo pacman -S'		# Install specific package(s) from the repositories
-	# alias pacins='sudo pacman -U'		# Install specific package not from the repositories but from a file 
-	# alias pacre='sudo pacman -R'		# Remove the specified package(s), retaining its configuration(s) and required dependencies
-	# alias pacrem='sudo pacman -Rns'	# Remove the specified package(s), its configuration(s) and unneeded dependencies
-	# alias pacrep='pacman -Si'		    # Display information about a given package in the repositories
-	# alias pacreps='pacman -Ss'		# Search for package(s) in the repositories
-	# alias pacloc='pacman -Qi'		    # Display information about a given package in the local database
-	# alias paclocs='pacman -Qs'		# Search for package(s) in the local database
-	# alias paclo="pacman -Qdt"		    # List all packages which are orphaned
-	# alias pacc="sudo pacman -Scc"		# Clean cache - delete all not currently installed package files
-	# alias paclf="pacman -Ql"		    # List all files installed by a given package
-	# complete -cf sudo
-	# complete -cf man
+
 
