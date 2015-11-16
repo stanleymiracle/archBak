@@ -142,4 +142,12 @@ vi /etc/systemd/logind.conf
 
 vi /etc/bash.bashrc
 
-
+###########################
+# git configuration       #
+###########################
+git clone url
+git config user.name "Sam Smith"
+git config user.email sam@example.com
+git add *
+git commit -m "Commit message"
+git push origin master
