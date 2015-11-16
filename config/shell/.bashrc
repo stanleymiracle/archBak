@@ -28,10 +28,6 @@ alias off='sudo poweroff'
 alias rst='sudo reboot'
 alias play='mplayer *.flac'
 
-# git shortcuts
-alias gitcommit='git commit -am'
-alias gitpush='git push origin master'
-
 # pacman tips
 alias pacupg='sudo pacman -Syyu'
 alias pacin='sudo pacman -S'
@@ -53,5 +49,5 @@ complete -cf man
 
 # temperary alias
 alias cds='cd ~/repo/Scheme/'
-alias abk='cd ~/repo/archBak/ && sh backup.sh && gitcommit "UPDATE" && gitpush && cd && clear'
-alias sbk='cd ~/repo/Scheme/ && sh backup.sh && gitcommit "UPDATE" && gitpush && cd && clear'
+alias abk='cd ~/repo/archBak/ && sh backup.sh && git add * && git commit -m "UPDATE" && git push origin master && cd && clear'
+alias sbk='cd ~/repo/Scheme/ && git add * && git commit -m "UPDATE" && git push origin master && cd && clear'
