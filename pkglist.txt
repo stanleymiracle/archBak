@@ -121,6 +121,7 @@ tk
 tmux
 tor
 transmission-qt
+tree
 ttf-dejavu
 ttf-droid
 ttf-liberation
