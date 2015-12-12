@@ -132,8 +132,6 @@ util-linux
 vicious
 vim
 virtualbox-guest-modules
-virtualbox-guest-utils
-virtualbox-host-dkms
 vorbis-tools
 wget
 which
