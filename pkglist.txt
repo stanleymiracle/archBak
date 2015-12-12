@@ -1,6 +1,5 @@
 acpi
 acpid
-aircrack-ng
 alsa-oss
 alsa-utils
 android-tools
@@ -100,7 +99,6 @@ pv
 pyrit
 python-pyserial
 racket
-reaver
 reiserfsprogs
 rlwrap
 rsync
@@ -119,7 +117,6 @@ thunar
 thunar-volman
 tk
 tmux
-tor
 transmission-qt
 tree
 ttf-dejavu
@@ -135,7 +132,6 @@ virtualbox-guest-modules
 vorbis-tools
 wget
 which
-wireshark-cli
 wpa_actiond
 wpa_supplicant
 wxmaxima
