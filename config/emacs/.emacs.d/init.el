@@ -8,7 +8,7 @@
 (package-initialize)
 
 ;; set default theme
-(load-theme 'autumn-light t)
+;(load-theme 'autumn-light t)
 
 ;; display time
 (setq display-time-24hr-format nil)
@@ -21,7 +21,8 @@
 
 ;; set window size
 (setq default-frame-alist
-      '((height . 48)))
+      '((height . 47)
+        (width  . 83)))
 
 ;; line number mode
 (global-linum-mode t)

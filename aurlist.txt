@@ -1,10 +1,5 @@
-arduino
+chez-scheme
 google-chrome-dev
-google-musicmanager
-libgcrypt15
-masterpdfeditor
-petite-chez-scheme
+masterpdfeditor-qt5
 sublime-text
 volnoti
-winusb
-xpdf

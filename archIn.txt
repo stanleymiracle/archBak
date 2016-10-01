@@ -13,16 +13,12 @@ ping -c 3 google.com
 ##################### 
 # file system setup #
 #####################
-#cfdisk /dev/sdX
-#	# 256MB boot
-#	# 10240MB /
-#	# the rest /home
 gdisk /dev/sdX
-	# d -> delete all existing partition
-	# o -> create new table
-	# n -> create partition 1
-	# n -> create partition 2
-	# n -> create partition 3
+  # d -> delete all existing partition
+  # o -> create new table
+  # n -> create partition 1
+  # n -> create partition 2
+  # n -> create partition 3
 mkfs.ext2 /dev/sdX1
 mkfs.ext4 /dev/sdX2
 mkfs.ext4 /dev/sdX3
@@ -45,16 +41,16 @@ pacstrap /mnt base base-devel
 ########################
 genfstab -p /mnt >> /mnt/etc/fstab
 nano /mnt/etc/fstab
-	# /dev/sda1	 /boot	ext2	defaults,relatime,stripe=4	0 2
-	# /dev/sda2	 /	    ext4	defaults,noatime,discard	0 1
-	# /dev/sda3	 /home	ext4	defaults,noatime,discard,data=ordered	0 2
+  # /dev/sda2  /      ext4  defaults,noatime,discard              0 1
+  # /dev/sda1  /boot  ext2  defaults,relatime,stripe=4            0 2
+  # /dev/sda3  /home  ext4  defaults,noatime,discard,data=ordered 0 2
 
 arch-chroot /mnt
 
-ln -s /usr/share/zoneinfo/US/Pacific /etc/localtime
+ln -s /usr/share/zoneinfo/America/Indianapolis /etc/localtime
 hwclock --systohc --utc
 nano /etc/locale.gen
-	# uncomment #en_US.UTF-8 UTF8 #zh_CN.UTF-8 UTF8
+  # uncomment #en_US.UTF-8 UTF8 #zh_CN.UTF-8 UTF8
 locale-gen
 echo LANG=en_US.UTF-8 > /etc/locale.conf
 export LANG=en_US.UTF-8
@@ -81,7 +77,7 @@ syslinux-install_update -i -a -m
 blkid
 nano /boot/syslinux/syslinux.cfg
 	# root=.../sdaX
-	# uuid assignment
+	# or root=UUID=...(uuid assignment)
 
 exit
 umount -R /mnt
@@ -113,7 +109,7 @@ cp ~/downloadedThemes/rc.lua ~/.config/awesome
 nano ~/.config/awesome/rc.lua
 cp /etc/skel/.xinitrc ~/.xinitrc
 vim ~/.xinitrc
-	# add 'exec awesome' to the end
+  # add 'exec awesome' to the end
 
 starx #open xwindow
 
@@ -123,24 +119,24 @@ starx #open xwindow
 systemctl enable netctl-auto@interface.service
 
 nano /etc/vimrc
-	# set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-	# set nu
+  # set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+  # set nu
 
 vi /usr/share/X11/keycodes/evdev
-	# change keycodes
+  # change keycodes
 
 vi /usr/share/kbd/keymaps/i386/qwerty/defkeymap.map.gz
-	# change keymap
+  # change keymap
 
 vi /etc/vconsole.conf
-	# KEYMAP=defkeymap
+  # KEYMAP=defkeymap
 
 vi .Xresources
 
 vi /etc/systemd/logind.conf
-	# HandleLidSwitch=ignore
+  # HandleLidSwitch=ignore
 
-vi /etc/bash.bashrc
+vi /etc/.bashrc
 
 ###########################
 # git configuration       #

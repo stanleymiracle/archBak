@@ -401,7 +401,7 @@ globalkeys = awful.util.table.join(
 	awful.key({ modkey,           }, "z", function() awful.util.spawn("thunar") end),
 
 	-- {{ Opens sublime_text }} --
-	awful.key({ modkey,           }, "s", function() awful.util.spawn("sublime_text") end),
+	awful.key({ modkey,           }, "s", function() awful.util.spawn("subl") end),
 
   -- {{ Opens texmacs }} --
   awful.key({ modkey,           }, "t", function() awful.util.spawn("texmacs") end),
@@ -420,7 +420,7 @@ globalkeys = awful.util.table.join(
 
 
   -- {{ Start capturing screen }} --
-  awful.key({ Alt,           }, "c", function() awful.util.spawn("import -window linuxfish cap.png") end),
+  awful.key({ Alt,           }, "c", function() awful.util.spawn("import -window linuxfish capture.png") end),
     
 	-- {{ Volume Control }} --
 	awful.key({     }, "XF86AudioRaiseVolume", function() awful.util.spawn("sh /home/linuxfish/.config/awesome/sound.sh up", false) end),
@@ -623,10 +623,10 @@ awful.rules.rules = {
     { rule = { class = "Firefox" },
       properties = { tag = tags[1][2], switchtotag = true } },
     -- Set google-chrome-stable to tags number 2 of screen 1 and switch to the tag.
-    { rule = { class = "google-chrome-unstable" },
+    { rule = { class = "Google-chrome-unstable" },
       properties = { tag = tags[1][2], switchtotag = true } },
     -- Set SUblime_text to tags number 3 of screen 1 and switch to the tag.
-    { rule = { class = "Sublime_text" },
+    { rule = { class = "Subl" },
       properties = { tag = tags[1][3], switchtotag = true } },
     -- Set TExmacs to tags number 3 of screen 1 and switch to the tag.
     --{ rule = { class = "TExmacs" },
