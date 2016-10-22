@@ -1,5 +1,8 @@
 chez-scheme
 google-chrome-dev
+intellij-idea-ce
+intellij-jdk
 masterpdfeditor-qt5
 sublime-text
+virtualbox-ext-oracle
 volnoti

@@ -2,6 +2,7 @@ acpi
 acpid
 alsa-oss
 alsa-utils
+amule
 android-tools
 android-udev
 audio-convert
@@ -28,7 +29,7 @@ djvulibre
 dosfstools
 e2fsprogs
 efibootmgr
-emacs
+emacs-nox
 fakeroot
 feh
 file
@@ -84,6 +85,7 @@ nethack
 npm
 ntfs-3g
 ntp
+openssh
 openvpn
 p7zip
 pacman
@@ -130,6 +132,8 @@ util-linux
 vi
 vicious
 vim
+virtualbox
+virtualbox-guest-iso
 vorbis-tools
 wget
 which

@@ -20,16 +20,16 @@
     (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-10")))
 
 ;; set window size
-(setq default-frame-alist
-      '((height . 47)
-        (width  . 83)))
+;(setq default-frame-alist
+;      '((height . 47)
+;        (width  . 83)))
 
 ;; line number mode
 (global-linum-mode t)
 
 
 ;; --------------------- Boolean Settings ---------------------
-(tool-bar-mode 0)
+;(tool-bar-mode 0)
 (blink-cursor-mode 0)
 (menu-bar-mode 1)
 (setq column-number-mode t)

@@ -1,3 +1,5 @@
+mkdir -p ~/.config/awesome
+
 cp ~/repo/archBak/config/awesome/rc.lua          ~/.config/awesome/rc.lua
 cp ~/repo/archBak/config/awesome/sound.sh        ~/.config/awesome/sound.sh
 cp ~/repo/archBak/config/awesome/ones.sh         ~/.config/awesome/ones.sh

@@ -626,7 +626,7 @@ awful.rules.rules = {
     { rule = { class = "Google-chrome-unstable" },
       properties = { tag = tags[1][2], switchtotag = true } },
     -- Set SUblime_text to tags number 3 of screen 1 and switch to the tag.
-    { rule = { class = "Subl" },
+    { rule = { class = "Sublime" },
       properties = { tag = tags[1][3], switchtotag = true } },
     -- Set TExmacs to tags number 3 of screen 1 and switch to the tag.
     --{ rule = { class = "TExmacs" },
