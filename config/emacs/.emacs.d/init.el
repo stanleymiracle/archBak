@@ -98,6 +98,7 @@
 
 ;; disable minimize window
 (global-unset-key (kbd "C-z"))
+(global-unset-key (kbd "C-a"))
 (global-unset-key (kbd "s-q"))
 (global-unset-key (kbd "C-X C-Z"))
 (global-unset-key (kbd "M-R"))
@@ -173,7 +174,7 @@
   (scroll-behind (prefix-numeric-value n)))
 
 (global-set-key (kbd "C-q") 'scroll-n-lines-behind)
-(global-set-key (kbd "C-z") 'scroll-n-lines-ahead)
+(global-set-key (kbd "C-a") 'scroll-n-lines-ahead)
 
 
 ;; ------------------- language modes -------------------
@@ -272,11 +273,19 @@
   (scheme-split-window)
   (scheme-send-definition))
 
+(defun scheme-send-region-split-window ()
+  (interactive)
+  (scheme-split-window)
+  (scheme-send-region (mark) (point)))
+
 (add-hook 'scheme-mode-hook
   (lambda ()
     (paredit-mode 1)
     (define-key scheme-mode-map (kbd "<f5>")
       'scheme-send-last-sexp-split-window)
     (define-key scheme-mode-map (kbd "<f6>")
-      'scheme-send-definition-split-window)))
+      'scheme-send-definition-split-window)
+    (define-key scheme-mode-map (kbd "<f7>")
+      'scheme-send-region-split-window)))
+
 (put 'dired-find-alternate-file 'disabled nil)

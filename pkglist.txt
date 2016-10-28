@@ -95,6 +95,7 @@ pcmciautils
 perl
 pkg-config
 polkit-gnome
+powerline
 processing
 procps-ng
 psmisc

@@ -4,6 +4,11 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+#[[ -z "$TMUX" ]] && exec tmux
+
+if [ "$TERM" = "screen" ] && [ -n "$TMUX" ] && [ -f /usr/lib/python3.5/site-packages/powerline/bindings/bash/powerline.sh ]; then
+    source /usr/lib/python3.5/site-packages/powerline/bindings/bash/powerline.sh
+fi
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
@@ -26,7 +31,8 @@ alias wifie='sudo wifi-menu wlp0s20u2'
 alias wifies='iw dev enp0s20u2 link'
 alias off='sudo poweroff'
 alias rst='sudo reboot'
-alias play='mplayer *.flac'
+alias play='mpv *.flac'
+alias copy='rsync -aP'
 
 # pacman tips
 alias pacupg='sudo pacman -Syyu'
@@ -51,3 +57,4 @@ complete -cf man
 alias cds='cd ~/repo/Scheme/'
 alias abk='cd ~/repo/archBak/ && sh backup.sh && git add * && git commit -m "UPDATE" && git push origin master && cd && clear'
 alias sbk='cd ~/repo/Schemer/ && git add * && git commit -m "UPDATE" && git push origin master && cd && clear'
+

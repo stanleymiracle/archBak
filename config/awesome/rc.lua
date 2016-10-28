@@ -418,6 +418,8 @@ globalkeys = awful.util.table.join(
   -- {{ Opens DrRacket }} --
   awful.key({ modkey,           }, "d", function() awful.util.spawn("drracket") end),
 
+  -- {{ Opens Intellij-Idea-CE }} --
+  awful.key({ modkey,           }, "i", function() awful.util.spawn("idea-ce-eap") end),
 
   -- {{ Start capturing screen }} --
   awful.key({ Alt,           }, "c", function() awful.util.spawn("import -window linuxfish capture.png") end),
@@ -626,7 +628,7 @@ awful.rules.rules = {
     { rule = { class = "Google-chrome-unstable" },
       properties = { tag = tags[1][2], switchtotag = true } },
     -- Set SUblime_text to tags number 3 of screen 1 and switch to the tag.
-    { rule = { class = "Sublime" },
+    { rule = { class = "Subl" },
       properties = { tag = tags[1][3], switchtotag = true } },
     -- Set TExmacs to tags number 3 of screen 1 and switch to the tag.
     --{ rule = { class = "TExmacs" },
