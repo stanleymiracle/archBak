@@ -6,3 +6,4 @@ masterpdfeditor-qt5
 sublime-text
 virtualbox-ext-oracle
 volnoti
+winusb

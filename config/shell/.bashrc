@@ -56,5 +56,5 @@ complete -cf man
 # temperary alias
 alias cds='cd ~/repo/Scheme/'
 alias abk='cd ~/repo/archBak/ && sh backup.sh && git add * && git commit -m "UPDATE" && git push origin master && cd && clear'
-alias sbk='cd ~/repo/Schemer/ && git add * && git commit -m "UPDATE" && git push origin master && cd && clear'
+
 

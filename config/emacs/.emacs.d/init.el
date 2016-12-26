@@ -54,7 +54,7 @@
 ;; ------------------------- value settings -----------------------
 (setq frame-title-format "%b - emacs")
 (setq user-full-name "Yiqing Liu")
-(setq user-mail-address "logicomiracle@gmail.com")
+(setq user-mail-address "stanleyxmiracle@gmail.com")
 
 (setq kill-ring-max 3000)
 (setq undo-limit 536000000)
@@ -275,12 +275,22 @@
 
 (defun scheme-send-region-split-window ()
   (interactive)
+  (mark-whole-buffer)
   (scheme-split-window)
   (scheme-send-region (mark) (point)))
+
+(global-prettify-symbols-mode 1)
+
+(defun pretty-lambda ()
+  (setq prettify-symbols-alist
+        '(("lambda" . 955))))
+(add-hook 'scheme-mode-hook 'pretty-lambda)
 
 (add-hook 'scheme-mode-hook
   (lambda ()
     (paredit-mode 1)
+    (define-key scheme-mode-map (kbd "C-c C-c")
+      'copy-to-register)
     (define-key scheme-mode-map (kbd "<f5>")
       'scheme-send-last-sexp-split-window)
     (define-key scheme-mode-map (kbd "<f6>")
