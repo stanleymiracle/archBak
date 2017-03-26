@@ -6,10 +6,10 @@ cp ~/.bashrc                   ~/repo/archBak/config/shell/.bashrc
 cp ~/.xinitrc                  ~/repo/archBak/config/shell/.xinitrc
 cp ~/.Xresources               ~/repo/archBak/config/shell/.Xresources
 cp ~/.bash_profile             ~/repo/archBak/config/shell/.bash_profile
-cp ~/.emacs.d/init.el          ~/repo/archBak/config/emacs/.emacs.d/init.el
+cp ~/.conkyrc                  ~/repo/archBak/config/shell/.conkyrc
+cp ~/.emacs.d/init.el          ~/repo/archBak/config/emacs/init.el
 cp ~/.tmux.conf                ~/repo/archBak/config/tmux/.tmux.conf
 cp ~/.xpdfrc                   ~/repo/archBak/config/xpdf/.xpdfrc
-cp ~/.conkyrc                  ~/repo/archBak/config/conky/.conkyrc
 cp  /etc/vimrc                 ~/repo/archBak/config/vim/vimrc
 
 pacman -Qqen > ~/repo/archBak/pkglist.txt

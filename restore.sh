@@ -8,8 +8,8 @@ cp ~/repo/archBak/config/shell/.bashrc           ~/.bashrc
 cp ~/repo/archBak/config/shell/.xinitrc          ~/.xinitrc
 cp ~/repo/archBak/config/shell/.Xresources       ~/.Xresources 
 cp ~/repo/archBak/config/shell/.bash_profile     ~/.bash_profile
-cp ~/repo/archBak/config/emacs/.emacs.d/init.el  ~/.emacs.d/init.el
+cp ~/repo/archBak/config/shell/.conkyrc          ~/.conkyrc
+cp ~/repo/archBak/config/emacs/init.el  ~/.emacs.d/init.el
 cp ~/repo/archBak/config/tmux/.tmux.conf         ~/.tmux.conf
 cp ~/repo/archBak/config/xpdf/.xpdfrc            ~/.xpdfrc
-cp ~/repo/archBak/config/conky/.conkyrc          ~/.conkyrc
 sudo cp ~/repo/archBak/config/vim/vimrc           /etc/vimrc
