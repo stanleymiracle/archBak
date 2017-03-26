@@ -117,7 +117,7 @@
 (global-set-key (kbd "S-C-<down>") 'shrink-window)
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
 (global-set-key (kbd "C-<tab>") 'tabbar-forward-tab)
-(global-set-key (kbd "S-C-<tab>") 'tabbar-backward-tab)
+(global-set-key (kbd "<backtab>") 'tabbar-backward-tab)
 
 ;; Useful Comment commands
 (defun comment-defun ()

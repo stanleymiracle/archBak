@@ -67,6 +67,7 @@ libtool
 licenses
 linux
 logrotate
+lshw
 lvm2
 m4
 macchanger
@@ -150,6 +151,7 @@ xf86-input-mouse
 xf86-input-synaptics
 xf86-input-vmmouse
 xf86-input-void
+xf86-video-intel
 xf86-video-vesa
 xfsprogs
 xorg-docs
