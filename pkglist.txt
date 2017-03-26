@@ -5,6 +5,7 @@ alsa-utils
 amule
 android-tools
 android-udev
+atom
 audio-convert
 autoconf
 automake
@@ -29,7 +30,7 @@ djvulibre
 dosfstools
 e2fsprogs
 efibootmgr
-emacs-nox
+emacs
 fakeroot
 feh
 file
@@ -104,6 +105,7 @@ pv
 pyrit
 python-pyserial
 racket
+redshift
 reiserfsprogs
 rlwrap
 rsync
@@ -142,7 +144,6 @@ wpa_actiond
 wpa_supplicant
 wxmaxima
 xchm
-xf86-input-joystick
 xf86-input-keyboard
 xf86-input-libinput
 xf86-input-mouse
