@@ -5,7 +5,6 @@ alsa-utils
 amule
 android-tools
 android-udev
-atom
 audio-convert
 autoconf
 automake
@@ -32,6 +31,7 @@ e2fsprogs
 efibootmgr
 emacs
 fakeroot
+fcrackzip
 feh
 file
 filesystem
@@ -98,7 +98,6 @@ perl
 pkg-config
 polkit-gnome
 powerline
-processing
 procps-ng
 psmisc
 puddletag
@@ -136,8 +135,6 @@ util-linux
 vi
 vicious
 vim
-virtualbox
-virtualbox-guest-iso
 vorbis-tools
 wget
 which
@@ -158,7 +155,6 @@ xorg-docs
 xorg-fonts-100dpi
 xorg-fonts-75dpi
 xorg-server
-xorg-server-utils
 xorg-smproxy
 xorg-x11perf
 xorg-xcursorgen
@@ -179,4 +175,5 @@ xorg-xwininfo
 xorg-xwud
 xpdf
 xterm
+youtube-dl
 zip

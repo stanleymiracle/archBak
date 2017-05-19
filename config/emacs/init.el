@@ -19,7 +19,6 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; set default theme
-;(load-theme 'autumn-light t)
 (require 'deep-blue-theme)
 
 ;; display time
@@ -28,10 +27,12 @@
 
 ;; set window size
 (setq default-frame-alist
-      '((top    . 20)
-        (left   . 570)
+      '(;(top    . 20)
+        ;(left   . 570)
         (width  . 80)
-        (height . 38)))
+        (height . 46)))
+
+(set-default-font "DejaVu Sans Mono 10")
 
 ;; line number mode
 (global-linum-mode t)

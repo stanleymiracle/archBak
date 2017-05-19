@@ -4,3 +4,4 @@ masterpdfeditor-qt5
 sublime-text
 volnoti
 winusb
+xorg-server-utils
