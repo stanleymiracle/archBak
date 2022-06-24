@@ -9,11 +9,21 @@ device list
 station <device> scan
 station <device> get-networks
 station <device> connect <SSID>
-##enter the passphrase
+## enter the passphrase
 
 ### istall Arch ###
 archinstall
-##finish the config steps
+## finish the config steps
 
 ### reboot the system ###
 
+### update pacman ###
+sudo pacman -Syyu
+
+### install apps ###
+sudo pacman -S git firefox chromium python mpv ntfs-3g exfat-utils gparted code emacs
+
+sudo nano /usr/share/applications/chromium.desktop
+## find Exec to add "--incognito"
+
+## customize firefox, chromium, emacs
