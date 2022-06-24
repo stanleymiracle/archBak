@@ -1,0 +1,19 @@
+### dd write Arch image to USB ###
+Rufus with DD
+
+### boot into the USB ###
+### connect to internet ###
+ip link
+iwctl
+device list
+station <device> scan
+station <device> get-networks
+station <device> connect <SSID>
+##enter the passphrase
+
+### istall Arch ###
+archinstall
+##finish the config steps
+
+### reboot the system ###
+
